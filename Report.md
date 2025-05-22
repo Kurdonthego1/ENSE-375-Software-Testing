@@ -8,6 +8,22 @@ This project is a console-based bank management application developed in Java, w
 
 * With the ever changing economic landscape, the safe and reliable management of your wealth has never been harder. Without a solution that allows users to manage their wealth and keep it secure, it puts stress and worry on them. This can lead to financial instability, unexpected debt, and difficulty achieving long-term financial goals. Our system will allow users to safely store, deposit, and withdraw and review their financial resources in an easy and reliable menu without too much complexity. 
 
+### 2.2 Design Requirements
+
+* 
+
+#### 2.2.1 Functions
+
+*
+
+#### 2.2.2 Objectives
+
+*
+
+#### 2.2.3 Contraints
+
+*
+
 ## 4) Team Work
 
 ### 4.1 Meeting 1

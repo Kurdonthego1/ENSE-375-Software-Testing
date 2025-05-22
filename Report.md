@@ -20,3 +20,14 @@ This project is a console-based bank management application developed in Java, w
     | Aaron Borja | N/A | 100% |
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
+
+### 4.2 Meeting 2
+
+* Time: May 21st, 2025 
+* Hour: 7:35pm to x
+* Agenda: Creating our design requirements and constraints
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | N/A | 100% |
+    | Yuval Glozman | N/A | 100% | 
+    | Zana Osman | N/A | 100% | 

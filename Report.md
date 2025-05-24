@@ -50,8 +50,8 @@
 ### 2.2.2 Objectives
 
 * App reliability
-* Secure databases
-* User friendly
+* Implementing local storage 
+* User friendly with easy directions
 * Easily testable and has no bugs
 
 ### 2.2.3 Contraints
@@ -61,7 +61,7 @@
 * Time constraints, project needs to be completed in 7 weeks
 * Hardware and Software constraints
 * Program must be created in Java, using Junit to test
-* Utilizing a sercure database
+* Testing using the V-Model
 
 ## 3) Solution
 

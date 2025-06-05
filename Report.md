@@ -108,10 +108,10 @@ Rather than using conventional database systems like MySQL or MongoDB, we would 
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
 
-### 4.3 Meeting 2
+### 4.3 Meeting 3
 
 * Time: June 4th, 2025 
-* Hour: 10:00pm to 10:455pm
+* Hour: 10:00pm to 10:45pm
 * Agenda: Developing two design solutions for our application
 *   | Team Member | Previous Task | Completion State |
     |----------|----------|----------|

@@ -79,8 +79,7 @@ After considering all of these features in our application, we found that this s
 This solution would be prioritized over other alternatives if development time was not a primary constraint.
 
 ### 3.2 Solution 2
-Our second solution would have the main functionalities of our first solution. However, this time instead of utilizing front-end languages/frameworks like HTML, CSS and Javascript for example, we would strictly limit our application to run using a console/terminal based GUI. 
-Rather than using conventional database systems like MySQL or MongoDB, we would implement a local JSON-based storage solution, where data is persisted directly on the user's machine.
+Our second solution would have the main functionalities of our first solution. However, this time instead of utilizing front-end languages/frameworks like HTML, CSS and Javascript for example, we would strictly limit our application to run using a console/terminal based GUI. This solution would give us more time to focus on testing and functionality of the program rather than it's visual appeal or ease of use when it comes to the grapical interface.
 ### 3.3 Final Solution
 
 ### 3.3.1 Components

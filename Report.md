@@ -72,6 +72,7 @@ For our first solution, our idea was to stray towards making a GUI for our appli
 * Withdrawing funds from made accounts.
 * Displaying account balances. 
 * Abillity to delete own account.
+
 With this solution, we would implement any of the big name databases such as MongoDB, or MySQL. When it comes to selecting a testing framework for this solution, we wanted to keep it minimal and stick with JUNit.
 
 After considering all of these features in our application, we found that this solution would make testing and development more complex and serverly increase our development time, given our team only has a month to code and develop the main functionalities of our application. 

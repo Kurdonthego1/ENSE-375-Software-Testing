@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.BankTest" time="0.152" tests="4" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.BankTest" time="0.139" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\xxlas\AppData\Local\Temp\surefire10682913499277340817\surefirebooter4380217625162526873.jar C:\Users\xxlas\AppData\Local\Temp\surefire10682913499277340817 2025-07-07T13-52-15_752-jvmRun1 surefire4383076393776451613tmp surefire_04139647435497037141tmp"/>
+    <property name="sun.java.command" value="C:\Users\xxlas\AppData\Local\Temp\surefire430208919553965839\surefirebooter12802299336930404412.jar C:\Users\xxlas\AppData\Local\Temp\surefire430208919553965839 2025-07-07T14-29-04_845-jvmRun1 surefire2468489026708614170tmp surefire_05416823229976695464tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\xxlas\OneDrive\Desktop\ENSE375\ENSE-375-Software-Testing-1\bgo\target\test-classes;C:\Users\xxlas\OneDrive\Desktop\ENSE375\ENSE-375-Software-Testing-1\bgo\target\classes;C:\Users\xxlas\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\xxlas\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\xxlas\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.0\junit-jupiter-5.10.0.jar;C:\Users\xxlas\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.0\junit-jupiter-api-5.10.0.jar;C:\Users\xxlas\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\xxlas\.m2\repository\org\junit\platform\junit-platform-commons\1.10.0\junit-platform-commons-1.10.0.jar;C:\Users\xxlas\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\xxlas\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;C:\Users\xxlas\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.0\junit-jupiter-engine-5.10.0.jar;C:\Users\xxlas\.m2\repository\org\junit\platform\junit-platform-engine\1.10.0\junit-platform-engine-1.10.0.jar;C:\Users\xxlas\.m2\repository\org\xerial\sqlite-jdbc\3.42.0.0\sqlite-jdbc-3.42.0.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\xxlas\AppData\Local\Temp\surefire10682913499277340817\surefirebooter4380217625162526873.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\xxlas\AppData\Local\Temp\surefire430208919553965839\surefirebooter12802299336930404412.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>
@@ -59,16 +59,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="TestInvalidUserLogin" classname="com.example.BankTest" time="0.131">
-    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at com.example.BankTest.TestInvalidUserLogin(BankTest.java:40)
-]]></failure>
-  </testcase>
-  <testcase name="TestInvalidUserRegistration" classname="com.example.BankTest" time="0.005">
-    <failure message="expected: &lt;false&gt; but was: &lt;true&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at com.example.BankTest.TestInvalidUserRegistration(BankTest.java:23)
-]]></failure>
-  </testcase>
-  <testcase name="TestValidUserLogin" classname="com.example.BankTest" time="0.005"/>
-  <testcase name="TestValidUserRegistration" classname="com.example.BankTest" time="0.004"/>
+  <testcase name="TestInvalidUserLogin" classname="com.example.BankTest" time="0.118"/>
+  <testcase name="TestInvalidUserRegistration" classname="com.example.BankTest" time="0"/>
+  <testcase name="TestValidUserLogin" classname="com.example.BankTest" time="0.007"/>
+  <testcase name="TestValidUserRegistration" classname="com.example.BankTest" time="0.006"/>
 </testsuite>

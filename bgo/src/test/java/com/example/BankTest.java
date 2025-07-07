@@ -35,8 +35,8 @@ public class BankTest {
     @Test
     void TestInvalidUserLogin() {
         Bank bank = new Bank();
-        bank.usersignup("bob", "piss");
-        boolean userLoggedin = bank.userlogin("bob", "piss");
+        bank.usersignup("bob", "idiot");
+        boolean userLoggedin = bank.userlogin("bob", "idiot");
         assertFalse(userLoggedin);
     }
 

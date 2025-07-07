@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.BankTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.152 s <<< FAILURE! - in com.example.BankTest
-TestInvalidUserLogin  Time elapsed: 0.131 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at com.example.BankTest.TestInvalidUserLogin(BankTest.java:40)
-
-TestInvalidUserRegistration  Time elapsed: 0.005 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <false> but was: <true>
-	at com.example.BankTest.TestInvalidUserRegistration(BankTest.java:23)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 s - in com.example.BankTest

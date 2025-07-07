@@ -40,9 +40,16 @@ public class BankTest {
         assertFalse(userLoggedin);
     }
 
-
     //Testing account creation (savings and chequing)
- 
+    @Test
+    void T
+    @Test
+    void savings(){
+        
+    }
+
+    @Te
+
     //Depositing
     
     //Withdrawing

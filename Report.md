@@ -118,3 +118,15 @@ Our second solution would have the main functionalities of our first solution. H
     | Aaron Borja | N/A | 100% |
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
+
+
+### 4.4 Meeting 4
+
+* Time: June 7th, 2025 
+* Hour: 10:30am to 2:30pm
+* Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | N/A | 100% |
+    | Yuval Glozman | N/A | 100% | 
+    | Zana Osman | N/A | 100% | 

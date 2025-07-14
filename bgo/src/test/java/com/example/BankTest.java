@@ -72,8 +72,8 @@ public class BankTest {
         bank.usersignup("testacc4", "testpass4");
         bank.userlogin("testacc4", "testpass4");
         bank.makeAccount("testacc4", "savings");
-        boolean accountRetrieved = bank.getAccount("testacc4","savings");
-        assertTrue(accountRetrieved);
+        BankAccount accountRetrieved = bank.getAccount("testacc4","savings");
+        assertNotNull(accountRetrieved);
     }
 
 

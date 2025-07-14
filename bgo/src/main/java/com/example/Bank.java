@@ -12,7 +12,7 @@ public class Bank {
     private static final String url = "jdbc:sqlite:bank.db";
 
     public boolean usersignup(String username, String password){
-        //Vibe coder
+        
         Pattern p = Pattern.compile("^.{8,}$");
         Matcher m = p.matcher(password);
 
@@ -59,5 +59,26 @@ public class Bank {
         }
     }
 
-    
+    public boolean makeAccount(String username, String accountName){
+        try(Connection conn = DriverManager.getConnection(url)){
+           PreparedStatement pstmt = conn.prepareStatement("SELECT * from bankusers where username = ?;");
+           pstmt.setString(1,username); 
+            ResultSet rs = pstmt.executeQuery();
+            BankUser owner = new BankUser(rs.getInt("id"), rs.getString("username"), rs.getString("password"));
+        if(accountName.equals("chequing") || accountName.equals("savings")){
+            BankAccount accountBeingMade = new BankAccount(accountName, owner, 0.00);
+            return true;
+        }
+        else{
+            return false;
+        }
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Login Failed. " + e.getMessage());
+            return false;
+        }
+    }
+
 }

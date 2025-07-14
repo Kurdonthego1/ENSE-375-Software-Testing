@@ -42,13 +42,31 @@ public class BankTest {
 
     //Testing account creation (savings and chequing)
     @Test
-    void T
+    void TestMakingChequing(){
+        Bank bank = new Bank();
+        bank.usersignup("testacc1", "testpass1");
+        boolean userLoggedin = bank.userlogin("testacc1", "testpass1");
+        boolean accountMade = bank.makeAccount("testacc1", "chequing");
+        assertTrue(accountMade);
+    }
     @Test
-    void savings(){
-        
+    void TestMakingSavings(){
+        Bank bank = new Bank();
+        bank.usersignup("testacc2", "testpass2");
+        boolean userLoggedin = bank.userlogin("testacc2", "testpass2");
+        boolean accountMade = bank.makeAccount("testacc2", "savings");
+        assertTrue(accountMade);
+    }
+    @Test
+    void TestInvalidAccount() {
+    Bank bank = new Bank();
+    bank.usersignup("testacc3", "testpass3");
+    bank.userlogin("testacc3", "testpass3");
+    boolean accountMade = bank.makeAccount("testacc3", "Business");
+    assertFalse(accountMade, "Account creation with invalid type should fail");
     }
 
-    @Te
+
 
     //Depositing
     

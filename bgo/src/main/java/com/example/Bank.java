@@ -110,15 +110,14 @@ public class Bank {
         BankUser owner = new BankUser(rs2.getInt("id"),rs2.getString("username"),rs2.getString("password"));
         BankAccount retrievedAccount = new BankAccount(rs.getString("accountType"),owner, rs.getDouble("accountBalance"));
         return retrievedAccount;
-        }else{
+        }
+        else{
             return null;
         }
 
         }else {
             return null;
         }
-
-
         }catch (SQLException e){
             e.printStackTrace();
             System.out.println("Login Failed. " + e.getMessage());

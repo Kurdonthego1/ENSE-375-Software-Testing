@@ -126,4 +126,61 @@ public class Bank {
     }
 
 }
+
+public boolean depositToAcc(BankAccount account, double amount){
+        if (account == null){
+            System.out.println("Cannot deposit.");
+            return false;
+        }
+        if (amount <= 0) {
+            System.out.println("Invalid deposit amount.");
+            return false;
+        }
+
+        try (Connection conn = DriverManager.getConnection(url)){
+            double newBalance = account.getAccountBalance() + amount;
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE accountOwner = ? AND accountType = ?;");
+
+            pstmt.setDouble(1, newBalance);
+            pstmt.setString(2, account.getAccountOwner().getUsername());
+            pstmt.setString(3, account.getAccountType());
+            pstmt.executeUpdate();
+            account.setAccountBalance(newBalance);
+            System.out.println("Deposit successful. Balance: " + account.getAccountBalance());
+            return true;
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Deposit Failed. " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean withdrawFromAcc(String username, String accountType, double withdrawAmount){
+        try(Connection conn = DriverManager.getConnection(url)){
+            BankAccount account = getAccount(username, accountType);
+            if(account == null){
+                return false;
+            }
+            double currentBalance = account.getAccountBalance();
+            if(withdrawAmount > currentBalance){
+                return false;
+            } else{
+                double newBalance = currentBalance - withdrawAmount;
+                account.setAccountBalance(newBalance);
+                PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
+                pstmt.setDouble(1, newBalance);
+                pstmt.setInt(2,account.getAccountId());
+                return true;
+            }
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Login Failed. " + e.getMessage());
+            return false;
+
+    }
+    }
+
 }

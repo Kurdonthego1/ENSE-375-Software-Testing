@@ -75,11 +75,22 @@ public class BankTest {
         BankAccount accountRetrieved = bank.getAccount("testacc4","savings");
         assertNotNull(accountRetrieved);
     }
-
-
-
     //Depositing
     
+    @Test
+    void testDeposit(){
+        Bank bank = new Bank();
+        bank.usersignup("testacc5", "testpass5");
+        bank.userlogin("testacc5", "testpass5");
+
+        bank.makeAccount("testacc5", "chequing");
+        BankAccount account = bank.getAccount("testacc5", "chequing");
+        bank.depositToAcc(account, 150.00);
+
+        assertEquals(150.00, bank.getAccount("testacc5", "chequing").getAccountBalance()-(bank.getAccount("testacc5", "chequing").getAccountBalance()-150), 0.01);
+    }
+
+
     //Withdrawing
 
     @Test
@@ -88,8 +99,9 @@ public class BankTest {
         bank.usersignup("testacc6", "testpass6");
         bank.userlogin("testacc6", "testpass6");
         bank.makeAccount("testacc6", "savings");
-        bank.depositToAcc("testacc6","savings",500.00);
-        boolean result = bank.withdrawFromAcc("testacc7","savings",300.00);
+        BankAccount account = bank.getAccount("testacc6", "savings");
+        bank.depositToAcc(account, 600);
+        boolean result = bank.withdrawFromAcc("testacc6","savings",300.00);
         assertTrue(result);
     }
 
@@ -99,7 +111,8 @@ public class BankTest {
         bank.usersignup("testacc7", "testpass7");
         bank.userlogin("testacc7", "testpass7");
         bank.makeAccount("testacc7", "savings");
-        bank.depositToAcc("testacc7","savings",500.00);
+        BankAccount account = bank.getAccount("testacc7", "savings");
+        bank.depositToAcc(account, 500);
         boolean result = bank.withdrawFromAcc("testacc7","savings",600.00);
         assertFalse(result);
     }
@@ -110,7 +123,8 @@ public class BankTest {
         bank.usersignup("testacc8", "testpass8");
         bank.userlogin("testacc8", "testpass8");
         bank.makeAccount("testacc8", "savings");
-        bank.depositToAcc("testacc8","savings",500.00);
+        BankAccount account = bank.getAccount("testacc8", "savings");
+        bank.depositToAcc(account, 500);
         boolean result = bank.withdrawFromAcc("testacc8","chequing",600.00);
         assertFalse(result);
     }

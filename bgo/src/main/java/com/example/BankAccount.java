@@ -8,6 +8,8 @@ public class BankAccount {
 
     private double accountBalance;
 
+    private int accountId;
+
     public BankAccount(String accountType,BankUser accountOwner, double accountBalance){
         this.accountType = accountType;
         this.accountOwner = accountOwner;
@@ -24,6 +26,10 @@ public class BankAccount {
 
     public double getAccountBalance() {
         return accountBalance;
+    }
+
+    public int getAccountId() {
+        return accountId;
     }
 
     public void setAccountBalance(double newAccountBalance) {

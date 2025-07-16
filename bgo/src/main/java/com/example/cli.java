@@ -18,6 +18,11 @@ public class cli {
                 String usersignup = scanner.nextLine(); //this is a method that reads a text from user inn terminal 
                 System.out.println("Please choose a password");
                 String passwordsignup = scanner.nextLine();
+                boolean signupresult = bank.usersignup(usersignup, passwordsignup);
+                if(signupresult){
+                    
+                }
+
                 
             } else if(beginDecision == 2){
                 System.out.println("Please enter your username:");

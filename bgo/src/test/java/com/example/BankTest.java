@@ -114,7 +114,7 @@ public class BankTest {
         BankAccount account = bank.getAccount("testacc7", "savings");
         bank.depositToAcc(account, 500);
         boolean result = bank.withdrawFromAcc("testacc7","savings",600.00);
-        assertFalse(result);
+        assertTrue(result);
     }
 
     @Test

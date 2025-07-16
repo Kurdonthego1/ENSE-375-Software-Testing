@@ -128,10 +128,5 @@ public class BankTest {
         boolean result = bank.withdrawFromAcc("testacc8","chequing",600.00);
         assertFalse(result);
     }
-
-
     //Balance inquiring
-
-    
-    
 }

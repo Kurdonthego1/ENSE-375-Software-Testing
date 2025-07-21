@@ -75,7 +75,8 @@ public class Bank {
            pstmt.setString(1,username); 
             ResultSet rs = pstmt.executeQuery();
             BankUser owner = new BankUser(rs.getInt("id"), rs.getString("username"), rs.getString("password"));
-        if(accountName.equals("chequing") || accountName.equals("savings")){
+            BankAccount exists = getAccount(username, accountName);
+        if(exists == null && (accountName.equals("chequing") || accountName.equals("savings"))){
             BankAccount accountBeingMade = new BankAccount(accountName, owner, 0.00);
             PreparedStatement insrt = conn.prepareStatement("INSERT INTO bankaccounts (accountType, accountOwner,accountBalance) VALUES(?,?,?);");
             insrt.setString(1, accountBeingMade.getAccountType());

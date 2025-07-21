@@ -9,59 +9,73 @@ public class cli {
 
         Scanner scanner = new Scanner(System.in);
         Bank bank = new Bank();
-        System.out.println("Hello and welcome to the BGO Financial Bank System, please select one of the options to begin: 1 to sign-up, 2 to login");
-        int beginDecision = scanner.nextInt(); //this is a method that reads an integer from the terminal
+        boolean auth = false;
 
 
-        while (true){
-            // Main terminal
+        while (!auth){
+            System.out.println("Hello and welcome to the BGO Financial Bank System, please select one of the options to begin!");
+            System.out.println("Sign up: 1");
+            System.out.println("Log in: 2");
+            System.out.println("Exit: 3");
+            System.out.println("Enter choice: ");
 
+            int beginDecision = scanner.nextInt();
+            scanner.nextLine();
 
-            // Signup
-            while(true){
-            if(beginDecision == 1){
-                System.out.println("Please choose a username");
-                String usersignup = scanner.nextLine(); //this is a method that reads a text from user inn terminal 
-                System.out.println("Please choose a password");
-                String passwordsignup = scanner.nextLine();
-                boolean signupresult = bank.usersignup(usersignup, passwordsignup);
-                if(signupresult){
+            if(beginDecision == 1) {
+                while(true){
+                    System.out.println("Please choose a username or type 'MENU' to return to the option menu: ");
+                    String usersignup = scanner.nextLine();
+                    if(usersignup.equalsIgnoreCase("MENU")) break;
+
+                    System.out.println("Please choose a password (must be 8 characters long)");
+                    String passwordsignup = scanner.nextLine();
+
+                    boolean signupresult = bank.usersignup(usersignup, passwordsignup);
+
+                    if(signupresult){
                     System.out.println("Sign up Successfull");
+                    auth = true;
                     break;
-                }
-                else{
+                } else{
                     System.out.println("Sign up unsuccessfull, please attempt again");
                 }
+                }
             }
-            }
-            // Login
-            if(beginDecision == 2){
-                while(true){
-                    System.out.println("Please enter your username:");
-                    String userlogin = scanner.nextLine();
-                    System.out.println("Please enter your password");
-                    String passwordlogin = scanner.nextLine();
-                    boolean loginresult = bank.userlogin(userlogin, passwordlogin);
-                    if(loginresult){
-                        System.out.println("Login Succesfull");
-                        System.out.println("Welcome" + " " + userlogin + " " + "Please select one of the options below:");
-                        System.out.println("1, 2, 3,");
-                    } else {
-                        System.out.println("Login Unsuccesfull, please try again");
-                        break;
-                    }
-                }   
-            }
-            
-            else{
-                System.out.println("Please enter a valid value");
+
+            else if (beginDecision == 2) {
+                while (true) {
+                System.out.println("Please enter your username or type 'MENU' to return to the options menu: ");
+                String userlogin = scanner.nextLine();
+                if(userlogin.equalsIgnoreCase("MENU")) break;
+
+                System.out.println("Please enter your password");
+                String passwordlogin = scanner.nextLine();
+                
+                boolean loginresult = bank.userlogin(userlogin, passwordlogin); 
+                
+                if(loginresult){
+                    System.out.println("Login Succesfull");
+                    auth = true;
+                    break;
+                } else {
+                    System.out.println("Login Unsuccesfull, please try again");
                 }
 
+                }
+            }
 
-            // Placeholder for logout
-            System.out.println("3. Exit");
-        
+            else if (beginDecision == 3) {
+                System.out.println("Have a good day and see you next time!");
+                scanner.close();
+                return;
+            }
+
+            else {
+                System.out.println("Please enter a valid option of 1,2, or 3");
+            }
+            // Main terminal
+
+        }
     }
-    
-}
 }

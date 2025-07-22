@@ -80,6 +80,7 @@ This solution would be prioritized over other alternatives if development time w
 
 ### 3.2 Solution 2
 Our second solution would have the main functionalities of our first solution. However, this time instead of utilizing front-end languages/frameworks like HTML, CSS and Javascript for example, we would strictly limit our application to run using a console/terminal based GUI. This solution would give us more time to focus on testing and functionality of the program rather than it's visual appeal or ease of use when it comes to the grapical interface.
+
 ### 3.3 Final Solution
 
 ### 3.3.1 Components
@@ -119,8 +120,29 @@ Our second solution would have the main functionalities of our first solution. H
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
 
-
 ### 4.4 Meeting 4
+
+* Time: June 7th, 2025 
+* Hour: 10:30am to 2:30pm
+* Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | N/A | 100% |
+    | Yuval Glozman | N/A | 100% | 
+    | Zana Osman | N/A | 100% | 
+
+### 4.5 Meeting 5
+
+* Time: June 7th, 2025 
+* Hour: 10:30am to 2:30pm
+* Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | N/A | 100% |
+    | Yuval Glozman | N/A | 100% | 
+    | Zana Osman | N/A | 100% | 
+
+### 4.6 Meeting 6
 
 * Time: June 7th, 2025 
 * Hour: 10:30am to 2:30pm

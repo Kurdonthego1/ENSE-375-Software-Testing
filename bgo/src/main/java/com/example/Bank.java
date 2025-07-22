@@ -22,32 +22,8 @@ public class Bank {
             System.out.println("Login Failed. " + e.getMessage());
         }
     }
-
-    public boolean usersignup(String username, String password){
-        
-        Pattern p = Pattern.compile("^.{8,}$");
-        Matcher m = p.matcher(password);
-
-        boolean validpassword = m.matches();
-
-        if(!validpassword){
-            return false;
-        }
-        try (Connection conn = DriverManager.getConnection(url)){
-
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO bankusers (username, password) VALUES (?,?);");
-            pstmt.setString(1, username);
-            pstmt.setString(2, password);
-            pstmt.executeUpdate();
-            return true;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Signup Failed. " + e.getMessage());
-            return false;
-        } //Placeholder before implementation and refactoring
-    }
     
+    // Make changes
     public boolean userlogin(String username, String password) { 
         try (Connection conn = DriverManager.getConnection(url)){
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bankusers WHERE username = ? AND password = ?;");
@@ -76,6 +52,7 @@ public class Bank {
             ResultSet rs = pstmt.executeQuery();
             BankUser owner = new BankUser(rs.getInt("id"), rs.getString("username"), rs.getString("password"));
             BankAccount exists = getAccount(username, accountName);
+            
         if(exists == null && (accountName.equals("chequing") || accountName.equals("savings"))){
             BankAccount accountBeingMade = new BankAccount(accountName, owner, 0.00);
             PreparedStatement insrt = conn.prepareStatement("INSERT INTO bankaccounts (accountType, accountOwner,accountBalance) VALUES(?,?,?);");

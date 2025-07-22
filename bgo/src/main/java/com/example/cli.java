@@ -123,8 +123,6 @@ public class cli {
                 System.out.println("Please enter a valid option of 1,2,3,4, or 5");
             }
 
-
-
         }
         System.out.println("Have a good day and see you next time!");
         scanner.close();

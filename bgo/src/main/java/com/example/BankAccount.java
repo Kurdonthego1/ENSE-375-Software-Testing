@@ -35,7 +35,4 @@ public class BankAccount {
     public void setAccountBalance(double newAccountBalance) {
         this.accountBalance = newAccountBalance;
     }
-
-    
-    
 }

@@ -126,5 +126,6 @@ public class cli {
         }
         System.out.println("Have a good day and see you next time!");
         scanner.close();
+        return;
     }
 }

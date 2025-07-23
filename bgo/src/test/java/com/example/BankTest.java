@@ -185,6 +185,27 @@ public void testSuccessfullWithdraw() {
         assertFalse(withdrawResult, "Withdrawal should fail because investment doesnt exist");
     }
 
+    //Transfer money between accounts test
+    @Test
+    public void testTransferSuccess(){
+        bank.deleteAccount("testLogin", "chequing");
+        bank.deleteAccount("testLogin", "savings");
+        bank.addAccount("testLogin", "chequing");
+        bank.addAccount("testLogin", "savings");
+
+        BankAccount chequing = bank.getAccount("testLogin", "chequing");
+        assertNotNull(chequing);
+        bank.depositToAcc(chequing, 400.00);
+
+        boolean transferResult = bank.transferFunds("testLogin", "chequing", "savings", 100.0);
+        assertTrue(transferResult);
+        BankAccount savings = bank.getAccount("testLogin", "savings");
+        assertEquals(300.00, savings.getAccountBalance(), 0.01);
+        assertEquals(300.00, chequing.getAccountBalance(), 0.01);
+    }
+    
+    
+
 }
 
    

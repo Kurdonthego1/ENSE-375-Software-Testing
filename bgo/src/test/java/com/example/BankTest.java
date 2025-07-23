@@ -7,7 +7,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 public class BankTest {
-<<<<<<< HEAD
     private Bank bank;
     private String testUsername = "testLogin";
     private String testPassword = "1234";
@@ -52,7 +51,6 @@ public class BankTest {
     @Test
     public void checkAccountBalances
 }
-=======
 
     @Test
     void testAddAccountSavings(){
@@ -130,4 +128,3 @@ public class BankTest {
 
     
 }
->>>>>>> 6a1536849144ec13adeefb9c587df95b058cd20f

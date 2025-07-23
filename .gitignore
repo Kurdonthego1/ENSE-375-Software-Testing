@@ -6,3 +6,5 @@ bgo/target/
 /**/*.class
 
 .DS_Store
+
+bgo/bank.db

@@ -186,24 +186,31 @@ public void testSuccessfullWithdraw() {
     }
 
     //Transfer money between accounts test
-    @Test
-    public void testTransferSuccess(){
-        Bank bank = new Bank();
-        bank.deleteAccount("testLogin", "chequing");
-        bank.deleteAccount("testLogin", "savings");
-        bank.addAccount("testLogin", "chequing");
-        bank.addAccount("testLogin", "savings");
+    // Transfer money between accounts test
+@Test
+public void testTransferSuccess() {
+    Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
+    bank.addAccount("testLogin", "chequing");
+    bank.addAccount("testLogin", "savings");
 
-        BankAccount chequing = bank.getAccount("testLogin", "chequing");
-        assertNotNull(chequing);
-        bank.depositToAcc(chequing, 400.00);
+    // deposit 400 into chequing
+    BankAccount chequing1 = bank.getAccount("testLogin", "chequing");
+    assertNotNull(chequing1);
+    assertTrue(bank.depositToAcc(chequing1, 400.00));
 
-        boolean transferResult = bank.transferFunds("testLogin", "chequing", "savings", 100.0);
-        assertTrue(transferResult);
-        BankAccount savings = bank.getAccount("testLogin", "savings");
-        assertEquals(300.00, savings.getAccountBalance(), 0.01);
-        assertEquals(300.00, chequing.getAccountBalance(), 0.01);
-    }
+    // do the transfer
+    assertTrue(bank.transferFunds("testLogin", "chequing", "savings", 100.0));
+
+    // re‑read both accounts from the DB
+    BankAccount chequing2 = bank.getAccount("testLogin", "chequing");
+    BankAccount savings2  = bank.getAccount("testLogin", "savings");
+    assertEquals(300.00, chequing2.getAccountBalance(),0.01,"Chequing should be 300 after moving 100 out");
+    assertEquals(300.00, savings2.getAccountBalance(),0.01,"Savings should be 100 after receiving 100");
+    
+}
+
     
     
 }

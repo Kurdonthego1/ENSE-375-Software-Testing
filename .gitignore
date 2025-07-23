@@ -7,4 +7,4 @@ bgo/target/
 
 .DS_Store
 
-bgo/bank.db
+bgo/*.db

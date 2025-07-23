@@ -44,7 +44,7 @@ public class Bank {
         }
     }
 
-    public boolean makeAccount(String username, String accountName){
+    public boolean addAccount(String username, String accountName){
         try(Connection conn = DriverManager.getConnection(url)){
            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bankusers WHERE username = ?;");
            pstmt.setString(1,username); 
@@ -68,7 +68,7 @@ public class Bank {
 
         }catch (SQLException e){
             e.printStackTrace();
-            System.out.println("Login Failed. " + e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
     }
@@ -97,7 +97,7 @@ public class Bank {
         }
         }catch (SQLException e){
             e.printStackTrace();
-            System.out.println("Login Failed. " + e.getMessage());
+            System.out.println(e.getMessage());
             return null;
 
     }
@@ -154,10 +154,31 @@ public boolean depositToAcc(BankAccount account, double amount){
         }
         catch (SQLException e){
             e.printStackTrace();
-            System.out.println("Login Failed. " + e.getMessage());
+            System.out.println(e.getMessage());
             return false;
 
     }
     }
 
+    public boolean deleteAccount(String username, String accountType){
+        try(Connection conn = DriverManager.getConnection(url)){
+            BankAccount accountExists = getAccount(username, accountType);
+            if(accountExists != null){
+                PreparedStatement pstmt = conn.prepareStatement("DELETE FROM bankaccounts where accountOwner = ? AND accountType = ?");
+                pstmt.setString(1,username);
+                pstmt.setString(2, accountType);
+                pstmt.executeUpdate();
+                System.out.println(accountType + " account deleted succesfully");
+                return true;
+            }
+            else{
+                return false;
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return false;
+    }
+}
 }

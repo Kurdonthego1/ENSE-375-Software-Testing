@@ -138,6 +138,46 @@ public class BankTest {
         boolean result = bank.depositToAcc(account, -43.21);
         assertFalse(result);
     }
+
+    
+    //Withdraw Path Testing
+    @Test
+    public void testSuccessfullWithdraw(){
+        Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
+        bank.addAccount("testLogin", "chequing");
+        BankAccount account = bank.getAccount("testLogin", "chequing");
+        bank.depositToAcc(account, 100.00);
+        boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 20.00);
+        assertTrue(withdrawResult, "Withdrawal should succeed");
+    }
+
+    @Test
+    public void testWithdrawalMoreThanBalance(){
+        Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
+        bank.addAccount("testLogin", "chequing");
+        BankAccount account = bank.getAccount("testLogin", "chequing");
+        bank.depositToAcc(account, 100.00);
+        boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 110.00);
+        assertFalse(withdrawResult, "Withdrawal should fail");
+    }
+
+    @Test
+    public void testWithdrawalFromNonExistentAccount(){
+        Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
+        boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 110.00);
+        assertFalse(withdrawResult, "Withdrawal should fail - no exist");
+    }
+
+    @Test
+    public void testWithdrawalFromInvalidAccount(){
+        Bank bank = new Bank();
+        boolean withdrawResult = bank.withdrawFromAcc("testLogin", "investment", 110.00);
+        assertFalse(withdrawResult, "Withdrawal should fail because investment doesnt exist");
+    }
+
 }
 
    

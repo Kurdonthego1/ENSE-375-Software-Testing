@@ -4,3 +4,5 @@ pom.xml
 
 bgo/target/
 /**/*.class
+
+.DS_Store

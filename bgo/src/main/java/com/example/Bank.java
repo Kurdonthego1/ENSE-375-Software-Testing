@@ -145,10 +145,16 @@ public boolean depositToAcc(BankAccount account, double amount){
             } else{
                 double newBalance = currentBalance - withdrawAmount;
                 account.setAccountBalance(newBalance);
-                PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
+                PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE accountOwner = ? AND accountType = ?;");
                 pstmt.setDouble(1, newBalance);
-                pstmt.setInt(2,account.getAccountId());
-                return true;
+                pstmt.setString(2, account.getAccountOwner().getUsername());
+                pstmt.setString(3, account.getAccountType());
+                System.out.println(">>> Updating balance...");
+                System.out.println("Account ID: " + account.getAccountId());
+                System.out.println("New Balance: " + newBalance);
+
+                int rowsUpdated = pstmt.executeUpdate();
+                return rowsUpdated > 0;
             }
 
         }

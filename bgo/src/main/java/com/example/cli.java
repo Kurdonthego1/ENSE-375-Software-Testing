@@ -2,7 +2,6 @@ package com.example;
 
 import java.util.Scanner;
 
-
 public class cli {
 
     public static void main(String[] args){

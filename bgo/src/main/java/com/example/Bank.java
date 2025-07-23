@@ -53,7 +53,7 @@ public class Bank {
             BankAccount exists = getAccount(username, accountName);
             
         if(exists == null && (accountName.equals("chequing") || accountName.equals("savings"))){
-            BankAccount accountBeingMade = new BankAccount(accountName, owner, 0.00);
+            BankAccount accountBeingMade = new BankAccount(accountName, owner, 0.00, 0);
             PreparedStatement insrt = conn.prepareStatement("INSERT INTO bankaccounts (accountType, accountOwner,accountBalance) VALUES(?,?,?);");
             insrt.setString(1, accountBeingMade.getAccountType());
             insrt.setString(2, accountBeingMade.getAccountOwner().getUsername());
@@ -85,7 +85,7 @@ public class Bank {
         ResultSet rs2 = pstmt2.executeQuery();
         if(rs2.next()){
         BankUser owner = new BankUser(rs2.getInt("id"),rs2.getString("username"),rs2.getString("password"));
-        BankAccount retrievedAccount = new BankAccount(rs.getString("accountType"),owner, rs.getDouble("accountBalance"));
+        BankAccount retrievedAccount = new BankAccount(rs.getString("accountType"),owner, rs.getDouble("accountBalance"), rs.getInt("id"));
         return retrievedAccount;
         }
         else{
@@ -148,7 +148,8 @@ public boolean depositToAcc(BankAccount account, double amount){
                 PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
                 pstmt.setDouble(1, newBalance);
                 pstmt.setInt(2,account.getAccountId());
-                return true;
+                int rowsUpdated = pstmt.executeUpdate();
+                return rowsUpdated > 0;
             }
 
         }

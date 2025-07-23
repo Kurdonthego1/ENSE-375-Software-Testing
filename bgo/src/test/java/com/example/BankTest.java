@@ -142,15 +142,22 @@ public class BankTest {
     
     //Withdraw Path Testing
     @Test
-    public void testSuccessfullWithdraw(){
-        Bank bank = new Bank();
-        bank.deleteAccount("testLogin", "chequing");
-        bank.addAccount("testLogin", "chequing");
-        BankAccount account = bank.getAccount("testLogin", "chequing");
-        bank.depositToAcc(account, 100.00);
-        boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 20.00);
-        assertTrue(withdrawResult, "Withdrawal should succeed");
-    }
+public void testSuccessfullWithdraw() {
+    Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.addAccount("testLogin", "chequing");
+    BankAccount account = bank.getAccount("testLogin", "chequing");
+    assertNotNull(account, "Account should not be null");
+    bank.depositToAcc(account, 100.00);
+    boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 20.00);
+    assertTrue(withdrawResult, "Withdrawal should succeed");
+    BankAccount updatedAccount = bank.getAccount("testLogin", "chequing");
+    assertEquals(80.00, updatedAccount.getAccountBalance(), 0.001, "Balance should be 80.00 after withdrawal");
+}
+
+    
+
+
 
     @Test
     public void testWithdrawalMoreThanBalance(){

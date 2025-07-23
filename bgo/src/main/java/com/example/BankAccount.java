@@ -10,10 +10,11 @@ public class BankAccount {
 
     private int accountId;
 
-    public BankAccount(String accountType,BankUser accountOwner, double accountBalance){
+    public BankAccount(String accountType,BankUser accountOwner, double accountBalance, int accountId){
         this.accountType = accountType;
         this.accountOwner = accountOwner;
         this.accountBalance = accountBalance;
+        this.accountId = accountId;
     }
 
     public String getAccountType() {

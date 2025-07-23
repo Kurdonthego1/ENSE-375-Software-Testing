@@ -188,6 +188,7 @@ public void testSuccessfullWithdraw() {
     //Transfer money between accounts test
     @Test
     public void testTransferSuccess(){
+        Bank bank = new Bank();
         bank.deleteAccount("testLogin", "chequing");
         bank.deleteAccount("testLogin", "savings");
         bank.addAccount("testLogin", "chequing");
@@ -205,7 +206,6 @@ public void testSuccessfullWithdraw() {
     }
     
     
-
 }
 
    

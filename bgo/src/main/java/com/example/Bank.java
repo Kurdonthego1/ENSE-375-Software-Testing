@@ -197,4 +197,41 @@ public void checkAccountBalances(String username, String accountType) {
             System.out.println("Error checking account balances: " + e.getMessage());
         }
     }
+
+    public boolean transferFunds(String username, String fromAccountType, String toAccountType, double amount){
+        try (Connection conn = DriverManager.getConnection(url)) {
+            BankAccount fromAcc = getAccount(username, fromAccountType);
+            BankAccount toAcc = getAccount(username, toAccountType);
+
+            if(fromAcc == null || toAcc == null || amount <=0){
+                return false;
+            }
+            double fromBalance = fromAcc.getAccountBalance();
+            if(fromBalance < amount){
+                return false;
+            }
+
+            double newFromBalance = fromBalance - amount;
+            double newToBalance = toAcc.getAccountBalance() + amount;
+
+            PreparedStatement updateFrom = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
+            updateFrom.setDouble(1, newFromBalance);
+            updateFrom.setInt(2, fromAcc.getAccountId());
+            int rows1 = updateFrom.executeUpdate();
+
+            PreparedStatement updateTo = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
+            updateTo.setDouble(1, newToBalance);
+            updateTo.setInt(2, toAcc.getAccountId());
+            int rows2 = updateTo.executeUpdate();
+            
+            fromAcc.setAccountBalance(newFromBalance);
+            toAcc.setAccountBalance(newToBalance);
+            return rows1 > 0 && rows2 > 0;
+            
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

@@ -181,4 +181,19 @@ public boolean depositToAcc(BankAccount account, double amount){
             return false;
     }
 }
+
+public void checkAccountBalances(String username, String accountType) {
+        try (Connection conn = DriverManager.getConnection(url)) {
+            BankAccount account = getAccount(username, accountType);
+            if (account != null) {
+                System.out.println("Account Type: " + account.getAccountType());
+                System.out.println("Account Balance: " + account.getAccountBalance());
+            } else {
+                System.out.println("No account found for the specified type.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error checking account balances: " + e.getMessage());
+        }
+    }
 }

@@ -185,7 +185,6 @@ public void testSuccessfullWithdraw() {
         assertFalse(withdrawResult, "Withdrawal should fail because investment doesnt exist");
     }
 
-    //Transfer money between accounts test
     // Transfer money between accounts test
     @Test
     public void testTransferSuccess() {

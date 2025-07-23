@@ -6,7 +6,6 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-
 public class Bank {
 
     private static final String url = "jdbc:sqlite:bank.db";

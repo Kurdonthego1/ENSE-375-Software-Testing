@@ -5,15 +5,6 @@ import org.junit.jupiter.api.Test;
 
 
 public class BankTest {
-    private Bank bank;
-    private String testUsername = "testLogin";
-    private String testPassword = "1234";
-    private String testAccountType = "savings";
-    private String testAccountType2 = "chequing";
-    private BankUser testUser;
-    private BankAccount testAccount;
-    private BankAccount testAccount2;
-
     @Test
     public void checkAccountBalances(){
         Bank bank = new Bank();
@@ -35,7 +26,6 @@ public class BankTest {
         bank.checkAccountBalances("testLogin", "investment");
         assertNull(account, "Account should still be null for invalid account type");
     }
-
 
     @Test
     void testAddAccountSavings(){

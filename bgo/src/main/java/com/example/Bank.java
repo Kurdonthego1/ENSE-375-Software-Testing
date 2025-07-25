@@ -3,8 +3,7 @@ package com.example;
 import java.sql.*;
 import java.io.*;
 import java.util.*;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 
 public class Bank {
 
@@ -31,10 +30,8 @@ public class Bank {
             ResultSet rs =  pstmt.executeQuery();
 
             if (!rs.next()) {
-                System.out.println("login failed, fookin dumbass");
                 return false;
                 } else { 
-                    System.out.println("login successful, welcome fooker" + username);
                     return true;
                 }
             } catch (SQLException e){
@@ -103,7 +100,7 @@ public class Bank {
     }
 
 }
-//test comment
+
 public boolean depositToAcc(BankAccount account, double amount){
         if (account == null){
             System.out.println("Cannot deposit.");

@@ -101,6 +101,34 @@ public class Bank {
 
 }
 
+public ArrayList<String> getAccounts(String username){
+
+    ArrayList<String> bankAccounts = new ArrayList<String>();
+
+    try (Connection conn = DriverManager.getConnection(url)){
+
+        PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bankaccounts WHERE accountOwner = ?;");
+        pstmt.setString(1, username);
+        ResultSet result = pstmt.executeQuery();
+
+        if(!result.next()){
+            return null;
+        }
+        else{
+
+        while(result.next()){
+            String at = result.getString("accountType");
+            bankAccounts.add(at);
+        }
+        return bankAccounts;
+    }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return null;
+    }
+
+}
+
 public boolean depositToAcc(BankAccount account, double amount){
         if (account == null){
             System.out.println("Cannot deposit.");

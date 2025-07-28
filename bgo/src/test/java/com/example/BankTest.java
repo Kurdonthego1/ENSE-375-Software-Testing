@@ -172,6 +172,17 @@ public void testSuccessfullWithdraw() {
         assertFalse(withdrawResult, "Withdrawal should fail because investment doesnt exist");
     }
 
+    @Test
+    public void testNegativeWithdrawal(){
+        Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
+        bank.addAccount("testLogin", "chequing");
+        BankAccount account = bank.getAccount("testLogin", "chequing");
+        assertNotNull(account);
+        boolean result = bank.withdrawFromAcc("testLogin", "chequing", -50.0);
+        assertFalse(result);
+    }
+
     // Transfer money between accounts test
     @Test
     public void testTransferSuccess() {

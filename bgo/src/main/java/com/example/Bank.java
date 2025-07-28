@@ -182,7 +182,13 @@ public boolean depositToAcc(BankAccount account, double amount){
             double currentBalance = account.getAccountBalance();
             if(withdrawAmount > currentBalance){
                 return false;
-            } else{
+            }
+            if (withdrawAmount <= 0) {
+                return false;            
+            }
+            if (withdrawAmount > currentBalance) {
+                return false;  
+            } else {
                 double newBalance = currentBalance - withdrawAmount;
                 account.setAccountBalance(newBalance);
                 PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");

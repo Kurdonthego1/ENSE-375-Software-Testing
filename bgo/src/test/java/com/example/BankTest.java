@@ -145,7 +145,7 @@ public void testSuccessfullWithdraw() {
     
 
 
-
+//We've selected the withdrawal function for path testing
     @Test
     public void testWithdrawalMoreThanBalance(){
         Bank bank = new Bank();

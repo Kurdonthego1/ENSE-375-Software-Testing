@@ -7,9 +7,10 @@ import java.util.*;
 
 public class Bank {
 
-    private static final String url = "jdbc:sqlite:bank.db";
+    private final String url;
 
     public Bank(){
+        this.url = "jdbc:sqlite:bank.db";
         try (Connection conn = DriverManager.getConnection(url)){
         Statement stmt = conn.createStatement();
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS bankusers (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, password TEXT NOT NULL);");
@@ -20,6 +21,20 @@ public class Bank {
             System.out.println("Login Failed. " + e.getMessage());
         }
     }
+
+    public Bank(String customUrl){
+        this.url = customUrl;
+        try (Connection conn = DriverManager.getConnection(url)){
+        Statement stmt = conn.createStatement();
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS bankusers (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, password TEXT NOT NULL);");
+            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS bankaccounts (id INTEGER PRIMARY KEY AUTOINCREMENT, accountType TEXT NOT NULL, accountOwner TEXT NOT NULL, accountBalance DOUBLE NOT NULL);");
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.out.println("Login Failed. " + e.getMessage());
+        }
+    }
+
     
     // Make changes
     public boolean userlogin(String username, String password) { 

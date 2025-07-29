@@ -29,8 +29,8 @@ public class BankTestDT {
         BankAccount savings2  = bank.getAccount("testLogin", "savings");
         assertEquals(300.00, chequing2.getAccountBalance(),0.01,"Chequing should be 300 after moving 100 out");
         assertEquals(100.00, savings2.getAccountBalance(),0.01,"Savings should be 100 after receiving 100");
-
     }
+    
     @Test
     public void testTransferFromNonexistentAccount() {
         Bank bank = new Bank();

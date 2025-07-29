@@ -83,6 +83,7 @@ Our second solution would have the main functionalities of our first solution. H
 
 ### 3.3 Final Solution
 
+![Image](Images/ComponentTesting.png)
 
 ### 3.3.1 Components
 

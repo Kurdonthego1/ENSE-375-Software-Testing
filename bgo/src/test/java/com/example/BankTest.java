@@ -111,7 +111,7 @@ public class BankTest {
         bank.addAccount("testLogin", "chequing");
         BankAccount account = bank.getAccount("testLogin", "chequing");
         assertNotNull(account);
-        boolean result = bank.depositToAcc(account, 234.21);
+        boolean result = bank.depositToAcc("testLogin","chequing", 234.21);
         assertTrue(result);
     }
 
@@ -122,7 +122,7 @@ public class BankTest {
         bank.addAccount("testLogin", "chequing");
         BankAccount account = bank.getAccount("testLogin", "chequing");
         assertNotNull(account);
-        boolean result = bank.depositToAcc(account, -43.21);
+        boolean result = bank.depositToAcc("testLogin","chequing", -43.21);
         assertFalse(result);
     }
 
@@ -135,7 +135,7 @@ public void testSuccessfullWithdraw() {
     bank.addAccount("testLogin", "chequing");
     BankAccount account = bank.getAccount("testLogin", "chequing");
     assertNotNull(account, "Account should not be null");
-    bank.depositToAcc(account, 100.00);
+    bank.depositToAcc("testLogin","chequing", 100.00);
     boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 20.00);
     assertTrue(withdrawResult, "Withdrawal should succeed");
     BankAccount updatedAccount = bank.getAccount("testLogin", "chequing");
@@ -152,7 +152,7 @@ public void testSuccessfullWithdraw() {
         bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         BankAccount account = bank.getAccount("testLogin", "chequing");
-        bank.depositToAcc(account, 100.00);
+        bank.depositToAcc("testLogin","chequing", 100.00);
         boolean withdrawResult = bank.withdrawFromAcc("testLogin", "chequing", 110.00);
         assertFalse(withdrawResult, "Withdrawal should fail");
     }
@@ -183,6 +183,15 @@ public void testSuccessfullWithdraw() {
         assertFalse(result);
     }
 
+    @Test
+    public void testWithdrawSQLException() {
+    String url = "jdbc:sqlite:/this/path/does/not/exist.db";
+    Bank bank = new Bank(url);
+    boolean result = bank.withdrawFromAcc("testLogin", "chequing", 10.0);
+    assertFalse(result, 
+      "With an invalid URL we should catch SQLException and return false");
+    }
+
     // Transfer money between accounts test
     @Test
     public void testTransferSuccess() {
@@ -195,7 +204,7 @@ public void testSuccessfullWithdraw() {
         // deposit 400 into chequing
         BankAccount chequing1 = bank.getAccount("testLogin", "chequing");
         assertNotNull(chequing1);
-        assertTrue(bank.depositToAcc(chequing1, 400.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 400.00));
 
         // do the transfer
         assertTrue(bank.transferFunds("testLogin", "chequing", "savings", 100.0));
@@ -222,7 +231,7 @@ public void testSuccessfullWithdraw() {
         bank.addAccount("testLogin", "savings");
 
         BankAccount chequing = bank.getAccount("testLogin", "chequing");
-        assertTrue(bank.depositToAcc(chequing, 100.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 100.00));
 
         //negative transfer
         assertFalse(bank.transferFunds("testLogin", "chequing", "savings", -5.00));
@@ -238,7 +247,7 @@ public void testSuccessfullWithdraw() {
 
         BankAccount chequing = bank.getAccount("testLogin", "chequing");
         assertNotNull(chequing);
-        assertTrue(bank.depositToAcc(chequing, 100.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 100.00));
 
 
         //transfer

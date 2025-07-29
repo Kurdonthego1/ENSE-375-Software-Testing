@@ -19,9 +19,7 @@ public class BankTestDT {
         bank.addAccount("testLogin", "savings");
 
         // deposit 400 into chequing
-        BankAccount chequing1 = bank.getAccount("testLogin", "chequing");
-        assertNotNull(chequing1);
-        assertTrue(bank.depositToAcc(chequing1, 400.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 400.00));
 
         // do the transfer
         assertTrue(bank.transferFunds("testLogin", "chequing", "savings", 100.0));
@@ -47,8 +45,7 @@ public class BankTestDT {
         bank.addAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "savings");
 
-        BankAccount chequing = bank.getAccount("testLogin", "chequing");
-        assertTrue(bank.depositToAcc(chequing, 100.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 100.00));
 
         //negative transfer
         assertFalse(bank.transferFunds("testLogin", "chequing", "savings", -5.00));
@@ -62,9 +59,7 @@ public class BankTestDT {
         bank.addAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "savings");
 
-        BankAccount chequing = bank.getAccount("testLogin", "chequing");
-        assertNotNull(chequing);
-        assertTrue(bank.depositToAcc(chequing, 100.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 100.00));
 
 
         //transfer
@@ -83,10 +78,9 @@ public class BankTestDT {
         bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
 
-        BankAccount account = bank.getAccount("testLogin", "chequing");
-        assertTrue(bank.depositToAcc(account, 100.00));
+        assertTrue(bank.depositToAcc("testLogin","chequing", 100.00));
 
         boolean transferResult = bank.transferFunds("testLogin", "chequing", "chequing", 50.00);
-        assertTrue(transferResult, "Cannot transfer to the same account");
+        assertFalse(transferResult, "Cannot transfer to the same account");
     }
 }

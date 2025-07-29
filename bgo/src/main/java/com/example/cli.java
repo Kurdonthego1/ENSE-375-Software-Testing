@@ -92,8 +92,7 @@ public class cli {
                     System.out.print("Amount to deposit: ");
                     double depAmt = scanner.nextDouble();
                     scanner.nextLine();
-                    BankAccount depAccount = bank.getAccount(username, depAcct);
-                    if (depAccount != null && bank.depositToAcc(depAccount, depAmt)) {
+                    if (bank.depositToAcc(username,depAcct, depAmt)) {
                         System.out.printf("New %s balance: %.2f%n",
                             depAcct, bank.getAccount(username, depAcct).getAccountBalance());
                     } else {

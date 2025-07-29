@@ -144,17 +144,19 @@ public ArrayList<String> getAccounts(String username){
 
 }
 
-public boolean depositToAcc(BankAccount account, double amount){
-        if (account == null){
-            System.out.println("Cannot deposit.");
+public boolean depositToAcc(String username, String accountName, double amount){
+        try (Connection conn = DriverManager.getConnection(url)){
+            BankAccount account = getAccount(username, accountName);
+
+            if (account == null){
+            System.out.println("Failed to find account, please ensure this account exists.");
             return false;
-        }
-        if (amount <= 0) {
+            }
+            if (amount <= 0 || amount > 10000 ) {
             System.out.println("Invalid deposit amount.");
             return false;
-        }
+            }
 
-        try (Connection conn = DriverManager.getConnection(url)){
             double newBalance = account.getAccountBalance() + amount;
             PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE accountOwner = ? AND accountType = ?;");
 
@@ -185,6 +187,9 @@ public boolean depositToAcc(BankAccount account, double amount){
             }
             if (withdrawAmount <= 0) {
                 return false;            
+            }
+            if(withdrawAmount > 5000){
+                return false;
             }
             if (withdrawAmount > currentBalance) {
                 return false;  
@@ -249,7 +254,16 @@ public void checkAccountBalances(String username, String accountType) {
             BankAccount fromAcc = getAccount(username, fromAccountType);
             BankAccount toAcc = getAccount(username, toAccountType);
 
-            if(fromAcc == null || toAcc == null || amount <=0){
+            if(fromAcc == null || toAcc == null){
+                return false;
+            }
+            if(amount <= 0){
+                return false;
+            }
+            if(amount > 7500){
+                return false;
+            }
+            if(fromAcc.getAccountType().equals(toAcc.getAccountType())){
                 return false;
             }
             double fromBalance = fromAcc.getAccountBalance();

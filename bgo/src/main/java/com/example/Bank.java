@@ -183,17 +183,18 @@ public boolean depositToAcc(String username, String accountName, double amount){
             }
             double currentBalance = account.getAccountBalance();
             if(withdrawAmount > currentBalance){
+                System.out.println("Can't withdraw more than the account Balance");
                 return false;
             }
             if (withdrawAmount <= 0) {
+                System.out.println("Please withdraw a value greather than 0");
                 return false;            
             }
             if(withdrawAmount > 5000){
+                System.out.println("You can only withdraw up to 5000");
                 return false;
             }
-            if (withdrawAmount > currentBalance) {
-                return false;  
-            } else {
+             else {
                 double newBalance = currentBalance - withdrawAmount;
                 account.setAccountBalance(newBalance);
                 PreparedStatement pstmt = conn.prepareStatement("UPDATE bankaccounts SET accountBalance = ? WHERE id = ?;");
@@ -224,6 +225,7 @@ public boolean depositToAcc(String username, String accountName, double amount){
                 return true;
             }
             else{
+                System.out.println("Failed to delete accounnt, please ensure the account exists and you type the correct account type");
                 return false;
             }
 
@@ -255,15 +257,19 @@ public void checkAccountBalances(String username, String accountType) {
             BankAccount toAcc = getAccount(username, toAccountType);
 
             if(fromAcc == null || toAcc == null){
+                System.out.println("One of the accounts doesn't exist");
                 return false;
             }
             if(amount <= 0){
+                System.out.println("Transfer amount must be greather than 0");
                 return false;
             }
             if(amount > 7500){
+                System.out.println("Can only transfer up to 7500");
                 return false;
             }
             if(fromAcc.getAccountType().equals(toAcc.getAccountType())){
+                System.out.println("Can't transfer from the same account to the same account");
                 return false;
             }
             double fromBalance = fromAcc.getAccountBalance();

@@ -83,7 +83,9 @@ Our second solution would have the main functionalities of our first solution. H
 
 ### 3.3 Final Solution
 
+
 ### 3.3.1 Components
+
 
 ## 4) Team Work
 
@@ -132,17 +134,6 @@ Our second solution would have the main functionalities of our first solution. H
     | Zana Osman | N/A | 100% | 
 
 ### 4.5 Meeting 5
-
-* Time: June 7th, 2025 
-* Hour: 10:30am to 2:30pm
-* Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
-*   | Team Member | Previous Task | Completion State |
-    |----------|----------|----------|
-    | Aaron Borja | N/A | 100% |
-    | Yuval Glozman | N/A | 100% | 
-    | Zana Osman | N/A | 100% | 
-
-### 4.6 Meeting 6
 
 * Time: June 7th, 2025 
 * Hour: 10:30am to 2:30pm

@@ -250,10 +250,6 @@ public void testSuccessfullWithdraw() {
         assertEquals(100.0, chequing2.getAccountBalance(), 0.01, "Chequing should stay at 100");
         assertEquals(0.00, savings2.getAccountBalance(), 0.01, "Savings should be 0 because we dont got 100 in the chequing");
     }
-
-
-    
-    
 }
 
    

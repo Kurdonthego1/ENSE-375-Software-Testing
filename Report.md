@@ -83,9 +83,75 @@ Our second solution would have the main functionalities of our first solution. H
 
 ### 3.3 Final Solution
 
+For our final solution, we ended up leaning towards Solution 2 as an inspiration, which is a CLI-based architecture with key features like deposit/withdraw, and transfer funds feature. This allowed us to maximize the testability in our project, while also being able to deliver reliable business logic within the short timeframe we were given. With this solution, we were able to reduce the dependency on the front-end frameworks, which allowed us to spend more time with the needed code paths and maintaining the components in the codebase. 
+
 ![Image](Images/ComponentTesting.png)
 
 ### 3.3.1 Components
+
+Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, bank.java, & cli.java
+
+* bankUser.java: simple getter and setter functions to access any bankUser objects.
+    * Testing method: Not tested directly, just setters and getters
+
+* bankAccount.java: simple getter and setter functions to access any bankAccount objects.
+    * Testing method: Not tested directly, just setters and getters
+
+* Bank.java: Our primary function file, holding all of our bank functions including, userLogin, addAccount, deleteAccount, depositToAcc, withdrawFromAcc, and transferFunds, getAccount.
+    * Testing Method: Tested functions mentioned below
+
+* cli.java: Component that controls the user-interface through a CLI.
+    * Testing Method: Use Case Testing, State Diagram
+
+**Functions**
+
+* userLogin: Login function that checks against the Database a username and password and returns true/false to authenticate the user.
+    * Testing Methods: Use Case Testing, State Diagram, Decision-Based Testing
+
+* addAccount: Allows a user to add a “savings” or “chequing” account that doesn’t exist yet. Returns true or false based on the result.
+    * Testing Methods: Use Case Testing, State Diagram, Decision-Based Testing 
+
+* deleteAccount:  Allows a user to delete an existing “savings” or “chequing” account. Returns true or false based on the result
+    * Testing Methods: Use Case Testing, State Diagram
+
+* depositToAcc: Allows a user to deposit a value from 1 to 10,000 into an existing account, returns true or false based on the success of the operation.
+    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing, State Diagram
+
+* withdrawFromAcc: Allows a user to withdraw a value from 0 to 5,000 from an existing account, returns true or false based on the success of the operation.
+    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing,Path Testing, Use Case Testing, State Diagram
+
+* transferFunds: Allows a user to transfer funds between two existing accounts, from 0 to 7,500. Returns true or false based on the success of the operation.
+    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing,Use Case Testing, State Diagram
+
+* getAccount: Retrieves an account based on a username and accountName. Primarily used as a helper function in other functions. Returns null or bankAccount object depending on the success of the operation.
+    * Testing Methods: Decision-Based Testing
+
+### 3.3.2     Environmental, Societal, Safety, and Economic Considerations
+* Our CLI‑based design makes deliberate trade‑offs to minimize resource usage, maximize accessibility, and keep costs low, while ensuring reliability and user safety:
+* Environmental
+    * A text‑only interface uses virtually no graphics, GPU, or heavy CPU cycles, reducing energy consumption on both desktops and servers.
+    * Zero dependencies on large frameworks or libraries further shrinks the application’s footprint and lowers its carbon impact over time
+* Societal
+    * Command‑line interfaces work equally well on low‑power devices, remote terminals, and screen readers, ensuring broad accessibility for users with limited hardware or visual impairments.
+    * No reliance on high‑bandwidth connections or modern browsers makes the app viable in under‑served or developing regions.
+    * This application will help provide users a way to track balances within their accounts and allow them to make better purchasing decision and budget more effectively
+* Safety & Reliability
+    * Strong input validation prevents invalid menu selections and malformed data, guarding against crashes and data corruption.
+    * Automated unit and integration tests exercise every code path (login, account ops, transfers), so regressions are caught before release.
+    * Our application also utilizes a local database to ensure security and reliability by being readily available at any time needed
+* Economic
+    * The way we designed our application made it so we didn’t need a  dedicated database server VM or containers which reduces hardware and personnel cost.
+    * Agile development practices (short sprints, continuous integration) kept team overhead low and accelerated delivery.
+
+### 3.3.3   Test Cases and results
+* We used Boundary Value Analysis (BankTestBVA,java), Decision-Based (BankTestDT.java), Data Flow (BankTestDF.java), Path Testing (BankTestPF.java), Equivalence Based testing (BankTestEQV.java), State Diagram and Use-Case testing for us to cover every part of our application.
+* This allowed us to have a better understanding of the application and provide the user with no empty routes having tested every possible case.
+* We executed the tests by automating tests as well as manually creating tables, flow charts and end to end testing through our application using the CLI.
+
+### 3.3.4     Limitations
+* One limitation we have with this project is implementing a CLI instead of a web based application using front end languages/frameworks. The main focus of this project was to indulge in the testing environment, so as a group we ultimately decided on distributing our effort more on the testing side instead of dedicating a frontend to support our application. 
+* Another limitation with this project is security. We decided to take the route of using pre-defined credentials when using our applications. This means that users will not be able to sign-up using their own credentials. While this helped us center our attention with testing, it gave us the limitation of not having factors such as password security and privacy. The credentials are stored in the SQLite file with no hashing or encrypting which is a major limitation in our app. 
+* As of now, our application is also very limited in flexibility. This application only supports basic chequing/saving account creation and fixed deposit/withdraw/transfer features, which is lacking when compared to more advanced bank management applications.
 
 
 ## 4) Team Work

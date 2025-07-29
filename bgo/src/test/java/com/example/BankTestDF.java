@@ -26,6 +26,4 @@ public class BankTestDF {
         boolean result = bank.addAccount("testLogin","chequing");
         assertFalse(result);
     }
-
-    
 }

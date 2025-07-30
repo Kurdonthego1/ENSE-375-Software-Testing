@@ -210,3 +210,15 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
     | Aaron Borja | N/A | 100% |
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
+
+## 5)
+
+## 6) Conclusion and Final Work
+
+Upon completing this project, we successfully implemented, designed and tested a CLI based banking management application that focused on practicing and enhancing our knowledge about the wide range of software testing methodologies and strategies we learned throughout this semester. By integrating our third solution as the final design, our team would work with a project that seamlessly achieves our objectives of having a local storage, a simple and user-friendly interface, and an application that would be easily testable. The system supports the basic, but essential banking operations such as account creation, being able to deposit and withdraw, checking account balances, and allowing users to transfer their funds to different accounts. 
+
+When it comes to testing, our team applied numerous testing strategies and methodologies. Path testing was used on the withdraw function to ensure we covered full logical flow while data flow testing was used to verify that the variables used in our functions were consistent. Integration testing was also implemented to test the flow between the important components in our program. Additionally, use-case testing tables and state diagrams were created to test user workflows and real-world interactions. Lastly, strategies Boundary Value Testing, Equivalence Class Testing, and Decision Tables were implemented to evaluate inputs and their different conditions. By using these strategies, this allowed us to obtain reasonable code coverage within the different modules. 
+
+Although we had many successes developing this project, we are also aware of the different limitations this project presents itself with. A big future design improvement that we could work on is scrapping the CLI and transitioning over to a proper front-end interface using frontend languages and tools. This would make the project stand out more and be more approachable for users. Testing was the main priority in this project, so aspects that we thought were advanced for the scope of this project such as user signup functionality, password hashing, and more complex banking features were omitted from the final design. By refining our system and using these design improvements, we believe this project has potential to become a powerful finance management tool.
+
+## 7) 

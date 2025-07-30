@@ -211,7 +211,11 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
 
-## 5)
+## 5) 
+
+![Gantt Chart](Images/Gantt.png)
+
+![Project Activity Network]()
 
 ## 6) Conclusion and Final Work
 

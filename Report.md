@@ -215,7 +215,7 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
 
 ![Gantt Chart](Images/Gantt.png)
 
-![Project Activity Network]()
+![Project Activity Network](Images/ProjectActivityNetwork.png)
 
 ## 6) Conclusion and Final Work
 

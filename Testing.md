@@ -86,6 +86,8 @@ Our functions included:
 
 As seen above, we explored and simulated two main flows the user could potentially go through with our application. This included success paths and exception conditions. The goal of this testing strategy was to validate that the operations worked in sequence, and that error handling would work as intended and provide user with feedback.
 
+The only component in our program that did not have a dedicated testing file was cli.java. We resorted to manually testing it using the use case testing instead, as we believed this was the best method to efficiently test the command line interface, given the time constraint of this project and having to learn and implement a new testing method. 
+
 ### State Transition Testing
 * ![State Transition Diagram](Images/statediagram.png)
 
@@ -94,7 +96,5 @@ Above is a diagram that represents the state flow and the transitons the program
 ### Integration Testing
 
 We used integration testing to make sure the different components in our program ran well with each other. 
-The testTransferSuccess() test is a good example of implementing integration testing. To summarize, this test verifies that a user can create a chequing and a savings account, deposit funds into one, and transfer a portion of those funds to to the other account. The components of addAccount(), depositToAcc(), transferFunds(), and getAccount are all being used here to work together to maintain a successful state upon execution. 
-
-
+In BankTest.java, testTransferSuccess() test is a good example of implementing integration testing. To summarize, this test verifies that a user can create a chequing and a savings account, deposit funds into one, and transfer a portion of those funds to to the other account. The components of addAccount(), depositToAcc(), transferFunds(), and getAccount are all being used here to work together to maintain a successful state upon execution. 
 

@@ -11,9 +11,31 @@ This provides a brief overview of the testing methods and strategies we used to 
 ***
 
 ### Path Testing
-* ![Paths](Images/pathTesting.png)
-* ![Control Flow Diagram](Images/cfg.png)
+* ![Paths](Images/image.png)
+* ![Control Flow Diagram](Images/cfg2.png)
 When choosing a function to implement path testing, we decided it would be best to use our withdrawal function. We made sure all possible routes were evaluated, whether that be successful or unsuccessful paths. 
+
+### Data Flow Testing
+For the data flow testing we decided to utilize in on our addAccount function in Bank.java
+
+In the document below it shows a step by step case of the development of the test cases for the function, from creating the graph of the function, to the DU paths and the test case parameters that will cover them.
+
+* ![Data Flow PDF](Documents/DF32752.pdf)
+
+### Boundary Value Analysis & Equivalance Class Testing
+
+For both of these testing methods, we chose to only use them on functions in our app that taken in a numeral value as one of the arguments, since most of our functions only take two strings, those functions wouldn't benefit as much from these two testing methods.00pm
+
+The functions that we did use these testing methods are,
+
+1. depositIntoAcc(String username, String accountName, double amount)
+2. withdrawFromAcc(String username, String accountType, double withdrawAmount)
+3. transferFunds(String username, String fromAccountType, String toAccountType, double amount)
+
+The detailed documentation as to how the test cases were formed for each of these functions is documented in the file below
+
+* ![BVA & EQV](Documents/)
+
 ### Use Case Testing
 * ![Case 1](Images/UseCase1.png)
 

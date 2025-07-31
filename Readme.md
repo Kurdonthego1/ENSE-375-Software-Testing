@@ -1,7 +1,13 @@
 ![BGO Financial](Images/raw.png)
 
 ## Project Overview
-* BGO Financial's goal is to improve its users
+* BGO Financial's goal is to improve its users financial well-being by allowing them to utilize our banking system to store and manage their funds in availabile accounts
+* The primary focus on the project was to learn about Test Driven Development and utilize a variety of testing methdologies to properly test our application.
+
+## How to Run
+1. Copy our repo into a folder
+2. "cd bgo"
+3. "mvn compile exec:java"
 
 
 ## Contributors

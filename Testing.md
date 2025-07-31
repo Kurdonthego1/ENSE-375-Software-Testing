@@ -80,9 +80,9 @@ Our functions included:
 ![withdrawFromAcc](DecisionBasedTesting/withdrawFromAccTesting.png)
 
 ### Use Case Testing
-* ![Case 1](Images/UseCase1.png)
+* ![Case 1](Images/usecase1new.png)
 
-* ![Case 2](Images/UseCase2.png)
+* ![Case 2](Images/usecase2new.png)
 
 As seen above, we explored and simulated two main flows the user could potentially go through with our application. This included success paths and exception conditions. The goal of this testing strategy was to validate that the operations worked in sequence, and that error handling would work as intended and provide user with feedback.
 

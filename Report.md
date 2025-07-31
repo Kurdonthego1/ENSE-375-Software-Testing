@@ -88,7 +88,7 @@ For our final solution, we ended up leaning towards Solution 2 as an inspiration
 #### Component Testing
 ![Image](Images/ComponentTesting.png)
 
-#### Solution Test
+#### Solution Table
 ![Image](Images/SolutionTable.png)
 
 ### 3.3.1 Components

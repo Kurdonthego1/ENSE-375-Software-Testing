@@ -82,7 +82,7 @@ public class cli {
                     if (bank.addAccount(username, acctType)) { // sucessfuly made account
                         System.out.println("Created " + acctType + " account.");
                     } else { // failed
-                        System.out.print("\n");
+                        System.out.print("\n Account creation failed, either account already exists or invalid account type.");
 
                     }
                     break;

@@ -85,11 +85,12 @@ Our second solution would have the main functionalities of our first solution. H
 
 For our final solution, we ended up leaning towards Solution 2 as an inspiration, which is a CLI-based architecture with key features like deposit/withdraw, and transfer funds feature. This allowed us to maximize the testability in our project, while also being able to deliver reliable business logic within the short timeframe we were given. With this solution, we were able to reduce the dependency on the front-end frameworks, which allowed us to spend more time with the needed code paths and maintaining the components in the codebase. We used SQLite which allowed us to store data directly in a single, self-contained file on the local file system. This eliminatred the need of a server which made the application easier to work with and test.
 
-#### Component Testing
-![Image](Images/ComponentTesting.png)
-
 #### Solution Table
 ![Image](Images/SolutionTable.png)
+
+#### Application Components
+![Image](Images/ComponentTesting.png)
+
 
 ### 3.3.1 Components
 

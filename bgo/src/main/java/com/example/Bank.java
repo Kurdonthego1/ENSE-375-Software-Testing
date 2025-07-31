@@ -193,7 +193,6 @@ public boolean depositToAcc(String username, String accountName, double amount){
                 pstmt.setString(1,username);
                 pstmt.setString(2, accountType);
                 pstmt.executeUpdate(); // delete the account from the DB
-                System.out.println(accountType + " account deleted succesfully");
                 return true;
             }
             else{ // account doesn't exist therefore fail
@@ -246,6 +245,7 @@ public void checkAccountBalances(String username, String accountType) { // check
             }
             double fromBalance = fromAcc.getAccountBalance(); 
             if(fromBalance < amount){ // can't transfer more than the account has
+                System.out.println("Can't transfer more than the current balance of the from account");
                 return false;
             }
 

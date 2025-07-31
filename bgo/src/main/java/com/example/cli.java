@@ -103,6 +103,7 @@ public class cli {
                     System.out.print("Amount to deposit: "); // grabbing amount
                     if(!scanner.hasNextDouble()){ // checking that amount is a proper doouble valie
                         System.out.println("You can only deposit a number!");
+                        scanner.nextLine();
                         break;
                     }
                     double depAmt = scanner.nextDouble();
@@ -121,6 +122,7 @@ public class cli {
                     System.out.print("Amount to withdraw: ");
                     if(!scanner.hasNextDouble()){ // checking that withdraw amount is a proper double
                         System.out.println("You can only withdraw a number!");
+                        scanner.nextLine();
                         break;
                     }
                     double wAmt = scanner.nextDouble(); // grabbing amount
@@ -159,12 +161,13 @@ public class cli {
                     String from = scanner.nextLine();
                     System.out.print("To   (chequing/savings): "); // gravving to account
                     String to = scanner.nextLine();
-                    System.out.print("Amount to transfer: "); // grabbing amount to transfer
-                    double tAmt = scanner.nextDouble();
+                    System.out.print("Amount to transfer: ");
                     if(!scanner.hasNextDouble()){ // check amount is a double
                         System.out.println("You can only transfer a number!");
+                        scanner.nextLine();
                         break;
                     }
+                    double tAmt = scanner.nextDouble();// grabbing amount to transfer
                     scanner.nextLine();
                     if (bank.transferFunds(username, from, to, tAmt)) { // if successful
                         System.out.println("Transfer successful!");

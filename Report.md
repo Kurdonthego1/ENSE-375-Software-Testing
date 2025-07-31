@@ -76,6 +76,7 @@ For our first solution, our idea was to stray towards making a GUI for our appli
 With this solution, we would implement any of the big name databases such as MongoDB, or MySQL. When it comes to selecting a testing framework for this solution, we wanted to keep it minimal and stick with JUNit.
 
 After considering all of these features in our application, we found that this solution would make testing and development more complex and serverly increase our development time, given our team only has a month to code and develop the main functionalities of our application. 
+
 This solution would be prioritized over other alternatives if development time was not a primary constraint.
 
 ### 3.2 Solution 2
@@ -123,15 +124,15 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
     * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing, State Diagram
 
 * withdrawFromAcc: Allows a user to withdraw a value from 0 to 5,000 from an existing account, returns true or false based on the success of the operation.
-    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing,Path Testing, Use Case Testing, State Diagram
+    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing, Path Testing, Use Case Testing, State Diagram
 
 * transferFunds: Allows a user to transfer funds between two existing accounts, from 0 to 7,500. Returns true or false based on the success of the operation.
-    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing,Use Case Testing, State Diagram
+    * Testing Methods: Boundary Value Assessment, Equivalence Class Based Testing, Use Case Testing, State Diagram
 
 * getAccount: Retrieves an account based on a username and accountName. Primarily used as a helper function in other functions. Returns null or bankAccount object depending on the success of the operation.
     * Testing Methods: Decision-Based Testing
 
-### 3.3.2     Environmental, Societal, Safety, and Economic Considerations
+### 3.3.2 Environmental, Societal, Safety, and Economic Considerations
 * Our CLI‑based design makes deliberate trade‑offs to minimize resource usage, maximize accessibility, and keep costs low, while ensuring reliability and user safety:
 * Environmental
     * A text‑only interface uses virtually no graphics, GPU, or heavy CPU cycles, reducing energy consumption on both desktops and servers.
@@ -148,12 +149,12 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
     * The way we designed our application made it so we didn’t need a  dedicated database server VM or containers which reduces hardware and personnel cost.
     * Agile development practices (short sprints, continuous integration) kept team overhead low and accelerated delivery.
 
-### 3.3.3   Test Cases and results
+### 3.3.3 Test Cases and results
 * We used Boundary Value Analysis (BankTestBVA,java), Decision-Based (BankTestDT.java), Data Flow (BankTestDF.java), Path Testing (BankTestPF.java), Equivalence Based testing (BankTestEQV.java), State Diagram and Use-Case testing for us to cover every part of our application.
 * This allowed us to have a better understanding of the application and provide the user with no empty routes having tested every possible case.
 * We executed the tests by automating tests as well as manually creating tables, flow charts and end to end testing through our application using the CLI.
 
-### 3.3.4     Limitations
+### 3.3.4 Limitations
 * One limitation we have with this project is implementing a CLI instead of a web based application using front end languages/frameworks. The main focus of this project was to indulge in the testing environment, so as a group we ultimately decided on distributing our effort more on the testing side instead of dedicating a frontend to support our application. 
 * Another limitation with this project is security. We decided to take the route of using pre-defined credentials when using our applications. This means that users will not be able to sign-up using their own credentials. While this helped us center our attention with testing, it gave us the limitation of not having factors such as password security and privacy. The credentials are stored in the SQLite file with no hashing or encrypting which is a major limitation in our app. 
 * As of now, our application is also very limited in flexibility. This application only supports basic chequing/saving account creation and fixed deposit/withdraw/transfer features, which is lacking when compared to more advanced bank management applications.
@@ -231,3 +232,4 @@ When it comes to testing, our team applied numerous testing strategies and metho
 Although we had many successes developing this project, we are also aware of the different limitations this project presents itself with. A big future design improvement that we could work on is scrapping the CLI and transitioning over to a proper front-end interface using frontend languages and tools. This would make the project stand out more and be more approachable for users. Testing was the main priority in this project, so aspects that we thought were advanced for the scope of this project such as user signup functionality, password hashing, and more complex banking features were omitted from the final design. By refining our system and using these design improvements, we believe this project has potential to become a powerful finance management tool.
 
 ## 7) 
+

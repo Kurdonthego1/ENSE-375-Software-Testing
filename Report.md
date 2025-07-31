@@ -233,4 +233,3 @@ Although we had many successes developing this project, we are also aware of the
 
 ## 7) 
 
-Gesh: Yo

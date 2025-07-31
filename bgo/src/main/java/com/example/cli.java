@@ -120,7 +120,7 @@ public class cli {
                     String wAcct = scanner.nextLine();
                     System.out.print("Amount to withdraw: ");
                     if(!scanner.hasNextDouble()){
-                        System.out.println("You can only deposit a number!");
+                        System.out.println("You can only withdraw a number!");
                         break;
                     }
                     double wAmt = scanner.nextDouble();
@@ -162,7 +162,7 @@ public class cli {
                     System.out.print("Amount to transfer: ");
                     double tAmt = scanner.nextDouble();
                     if(!scanner.hasNextDouble()){
-                        System.out.println("You can only deposit a number!");
+                        System.out.println("You can only transfer a number!");
                         break;
                     }
                     scanner.nextLine();

@@ -1,4 +1,4 @@
-This provides a brief overview of the testing methods and strategies we used to validate the functionality of our project. Techniques such as Path Testing, Data Flow Testing, Boundary Value Analysis, Equivalence Class Testing, Decision-Based Testing, State Transition Testing, and Integration Testing
+This provides a brief overview of the testing methods and strategies we used to validate the functionality of our project. Techniques such as Path Testing, Data Flow Testing, Boundary Value Analysis, Equivalence Class Testing, Decision-Based Testing, Use Case Testing, State Transition Testing, and Integration Testing
 
 ### Testing Techniques:
 - Path Testing
@@ -6,6 +6,7 @@ This provides a brief overview of the testing methods and strategies we used to 
 - Boundary Value Analysis
 - Equivalence Class Testing
 - Decision-Based Testing
+- Use Case Testing
 - State Transition Testing
 - Integration Testing
 ***
@@ -35,13 +36,6 @@ The functions that we did use these testing methods are,
 The detailed documentation as to how the test cases were formed for each of these functions is documented in the file below
 
 [BVA & EQV](Documents/BoundaryValueTesting&EquivalanceClassTesting.pdf)
-
-### Use Case Testing
-* ![Case 1](Images/UseCase1.png)
-
-* ![Case 2](Images/UseCase2.png)
-
-As seen above, we explored and simulated two main flows the user could potentially go through with our application. This included success paths and exception conditions. The goal of this testing strategy was to validate that the operations worked in sequence, and that error handling would work as intended and provide user with feedback.
 
 ### Decision Based Testing
 
@@ -84,3 +78,23 @@ Our functions included:
 * withdrawFromAcc Testing
 
 ![withdrawFromAcc](DecisionBasedTesting/withdrawFromAccTesting.png)
+
+### Use Case Testing
+* ![Case 1](Images/UseCase1.png)
+
+* ![Case 2](Images/UseCase2.png)
+
+As seen above, we explored and simulated two main flows the user could potentially go through with our application. This included success paths and exception conditions. The goal of this testing strategy was to validate that the operations worked in sequence, and that error handling would work as intended and provide user with feedback.
+
+### State Transition Testing
+* ![State Transition Diagram](Images/statediagram.png)
+
+Above is a diagram that represents the state flow and the transitons the program goes through in our application. Each circle represents a state that the user could potentially be in when going through our program. Having this diagram allowed us to accurately map out all of the correct reachable transitions and paths in our program.
+
+### Integration Testing
+
+We used integration testing to make sure the different components in our program ran well with each other. 
+The testTransferSuccess() test is a good example of implementing integration testing. To summarize, this test verifies that a user can create a chequing and a savings account, deposit funds into one, and transfer a portion of those funds to to the other account. The components of addAccount(), depositToAcc(), transferFunds(), and getAccount are all being used here to work together to maintain a successful state upon execution. 
+
+
+

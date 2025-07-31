@@ -33,6 +33,10 @@ The functions that we did use these testing methods are,
 2. withdrawFromAcc(String username, String accountType, double withdrawAmount)
 3. transferFunds(String username, String fromAccountType, String toAccountType, double amount)
 
+Due to username and accountType/name variables not having any real boundary values and very simple equivalnce class's, they were treated as T/F values in the testing requirements/cases. Due to these functions being tested with other methodologies like Decision based testing. We decided to assume for these functions that the username and accountType/name variables would be valid and only focus on testing cases where the amount variable affects the test result.
+
+Additionally due to the depositToAcc,withdrawFromAcc, and transferFunds function not being able to take in string values as an argument for the amount variable,for the equivalance class testing the JUnit frame for those tests were made, however they were commented out to allow the other tests to run and instead those 3 tests were done manually.
+
 The detailed documentation as to how the test cases were formed for each of these functions is documented in the file below
 
 [BVA & EQV](Documents/BoundaryValueTesting&EquivalanceClassTesting.pdf)

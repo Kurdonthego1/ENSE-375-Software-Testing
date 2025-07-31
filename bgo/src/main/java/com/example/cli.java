@@ -16,6 +16,12 @@ public class cli {
             System.out.println("2) Exit");
             System.out.print("Enter choice: ");
 
+            if(!scanner.hasNextInt()){
+                System.out.println("Invalid option - Please enter a number (1 or 2)");
+                scanner.nextLine();
+                continue;
+            }
+
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -60,6 +66,12 @@ public class cli {
             System.out.println("7) Exit");
             System.out.print("Enter choice: ");
 
+            if(!scanner.hasNextInt()){
+                System.out.println("Invalid option - Please enter a number (1-7)");
+                scanner.nextLine();
+                continue;
+            }
+
             int menu = scanner.nextInt();
             scanner.nextLine();
 
@@ -89,6 +101,10 @@ public class cli {
                     System.out.print("Deposit to which account? (chequing/savings): ");
                     String depAcct = scanner.nextLine();
                     System.out.print("Amount to deposit: ");
+                    if(!scanner.hasNextDouble()){
+                        System.out.println("You can only deposit a number!");
+                        break;
+                    }
                     double depAmt = scanner.nextDouble();
                     scanner.nextLine();
                     if (bank.depositToAcc(username,depAcct, depAmt)) {
@@ -103,6 +119,10 @@ public class cli {
                     System.out.print("Withdraw from which account? (chequing/savings): ");
                     String wAcct = scanner.nextLine();
                     System.out.print("Amount to withdraw: ");
+                    if(!scanner.hasNextDouble()){
+                        System.out.println("You can only deposit a number!");
+                        break;
+                    }
                     double wAmt = scanner.nextDouble();
                     scanner.nextLine();
                     if (bank.withdrawFromAcc(username, wAcct, wAmt)) {
@@ -116,13 +136,22 @@ public class cli {
                     break;
 
                 case 5:
+                BankAccount che = bank.getAccount(username,"chequing");
+                BankAccount sav = bank.getAccount(username, "savings");
+                if(che != null){
                     System.out.println("--------- Chequing Balance: ---------");
                     bank.checkAccountBalances(username, "chequing");
-                    System.out.print("\n"); 
+                    System.out.print("\n");
+                } 
+                if(sav != null){
                     System.out.println("--------- Savings Balance ---------");
                     bank.checkAccountBalances(username, "savings");
                     System.out.print("\n"); 
-
+                }
+                if(sav == null && che == null){
+                    System.out.println("No accounts made, please make accounts first to view their balance.");
+                    System.out.print("\n"); 
+                }
                     break;
 
                 case 6:
@@ -132,6 +161,10 @@ public class cli {
                     String to = scanner.nextLine();
                     System.out.print("Amount to transfer: ");
                     double tAmt = scanner.nextDouble();
+                    if(!scanner.hasNextDouble()){
+                        System.out.println("You can only deposit a number!");
+                        break;
+                    }
                     scanner.nextLine();
                     if (bank.transferFunds(username, from, to, tAmt)) {
                         System.out.println("Transfer successful!");

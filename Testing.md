@@ -20,7 +20,7 @@ For the data flow testing we decided to utilize in on our addAccount function in
 
 In the document below it shows a step by step case of the development of the test cases for the function, from creating the graph of the function, to the DU paths and the test case parameters that will cover them.
 
-* ![Data Flow PDF](Documents/DF32752.pdf)
+[Data Flow PDF](Documents/DF32752.pdf)
 
 ### Boundary Value Analysis & Equivalance Class Testing
 
@@ -34,7 +34,7 @@ The functions that we did use these testing methods are,
 
 The detailed documentation as to how the test cases were formed for each of these functions is documented in the file below
 
-* ![BVA & EQV](Documents/)
+[BVA & EQV](Documents/Documents/BoundaryValueTesting&EquivalanceClassTesting.pdf)
 
 ### Use Case Testing
 * ![Case 1](Images/UseCase1.png)
@@ -42,3 +42,45 @@ The detailed documentation as to how the test cases were formed for each of thes
 * ![Case 2](Images/UseCase2.png)
 
 As seen above, we explored and simulated two main flows the user could potentially go through with our application. This included success paths and exception conditions. The goal of this testing strategy was to validate that the operations worked in sequence, and that error handling would work as intended and provide user with feedback.
+
+### Decision Based Testing
+
+For our Decision Based Testing we started off by taking all of our functions that we had and counted how many parameters each functions needed
+
+From this we then took the amount of paramaters to genereate our Conditions and Actions and get the amount of rules needed with 2^conditions
+
+Each of our functions were then tested using the rules we had found in order to ensure we had exhausted all cases from our code
+
+Our functions included:
+
+* addAccount Testing
+
+![addAccount](DecisionBasedTesting/addAccountTesting.png)
+
+* checkAccountBalances Testing
+
+![checkAccountBalances](DecisionBasedTesting/checkAccountBalancesTesting.png)
+
+* deleteAccount Testing
+
+![deleteAccount](DecisionBasedTesting/deleteAccountTesting.png)
+
+* depositToAcc Testing
+
+![depositToAcc](DecisionBasedTesting/depositToAccTesting.png)
+
+* getAccount Testing
+
+![getAccount](DecisionBasedTesting/getAccountTesting.png)
+
+* transferFunds Testing
+
+![transferFunds](DecisionBasedTesting/transferFundsTesting.png)
+
+* userlogin Testing
+
+![userlogin](DecisionBasedTesting/userloginTesting.png)
+
+* withdrawFromAcc Testing
+
+![withdrawFromAcc](DecisionBasedTesting/withdrawFromAccTesting.png)

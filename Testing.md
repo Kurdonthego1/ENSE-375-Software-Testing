@@ -25,7 +25,7 @@ In the document below it shows a step by step case of the development of the tes
 
 ### Boundary Value Analysis & Equivalance Class Testing
 
-For both of these testing methods, we chose to only use them on functions in our app that taken in a numeral value as one of the arguments, since most of our functions only take two strings, those functions wouldn't benefit as much from these two testing methods.00pm
+For both of these testing methods, we chose to only use them on functions in our app that taken in a numeral value as one of the arguments, since most of our functions only take two strings, those functions wouldn't benefit as much from these two testing methods.
 
 The functions that we did use these testing methods are,
 

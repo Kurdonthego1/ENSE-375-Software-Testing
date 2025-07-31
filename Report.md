@@ -159,7 +159,6 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
 * Another limitation with this project is security. We decided to take the route of using pre-defined credentials when using our applications. This means that users will not be able to sign-up using their own credentials. While this helped us center our attention with testing, it gave us the limitation of not having factors such as password security and privacy. The credentials are stored in the SQLite file with no hashing or encrypting which is a major limitation in our app. 
 * As of now, our application is also very limited in flexibility. This application only supports basic chequing/saving account creation and fixed deposit/withdraw/transfer features, which is lacking when compared to more advanced bank management applications.
 
-
 ## 4) Team Work
 
 ### 4.1 Meeting 1
@@ -199,25 +198,124 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
 
 * Time: June 7th, 2025 
 * Hour: 10:30am to 2:30pm
-* Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
+* Agenda: Design Solution Table & Decide on aspects of final solution
 *   | Team Member | Previous Task | Completion State |
     |----------|----------|----------|
-    | Aaron Borja | N/A | 100% |
+    | Aaron Borja | N/A| 100% |
     | Yuval Glozman | N/A | 100% | 
     | Zana Osman | N/A | 100% | 
 
 ### 4.5 Meeting 5
 
-* Time: June 7th, 2025 
-* Hour: 10:30am to 2:30pm
+* Time: June 12th, 2025 
+* Hour: 2:00pm to 2:40pm
 * Agenda: Started developing application, implemented TDD and wrote tests for login and signup.
 *   | Team Member | Previous Task | Completion State |
     |----------|----------|----------|
     | Aaron Borja | N/A | 100% |
     | Yuval Glozman | N/A | 100% | 
-    | Zana Osman | N/A | 100% | 
+    | Zana Osman | N/A  | 100% | 
+    
+### 4.6 Meeting 6
 
-## 5) 
+* Time: July 7th, 2025 
+* Hour: 6:00pm to 12:00am
+* Agenda: Ongoing development and testing
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development  | 10% |
+    | Yuval Glozman | Development  | 10% | 
+    | Zana Osman | Development  | 10% | 
+
+### 4.7 Meeting 7
+
+* Time: July 8th, 2025 
+* Hour: 5:00 - 10:00 pm
+* Agenda: Ongoing development and testing
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development | 35% |
+    | Yuval Glozman | Development | 35% | 
+    | Zana Osman | Development | 35% | 
+
+### 4.8 Meeting 8
+
+* Time: July 14th, 2025 
+* Hour: 7:00pm - 9:00pm 
+* Agenda: Ongoing development and testing
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development  | 50% |
+    | Yuval Glozman | Development  | 50% | 
+    | Zana Osman | Development  | 50% | 
+
+### 4.9 Meeting 9
+
+* Time: July 15th, 2025 
+* Hour: 9:42pm to 10:37pm
+* Agenda: Ongoing development and testing
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development  | 65% |
+    | Yuval Glozman | Development | 65% | 
+    | Zana Osman | Development | 65% | 
+
+### 4.10 Meeting 10
+
+* Time: July 21st, 2025 
+* Hour: 2pm to 3:00pm and 10:00pm to 12:00 am
+* Agenda: Ongoing development and testing
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | N/A | 70% |
+    | Yuval Glozman | N/A | 70% | 
+    | Zana Osman | N/A | 70% | 
+
+### 4.11 Meeting 11
+
+* Time: July 22nd, 2025 
+* Hour: 4:30pm to 5:30pm
+* Agenda: Ongoing development
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development | 85% |
+    | Yuval Glozman | Development | 85% | 
+    | Zana Osman | Development | 85% | 
+
+### 4.12 Meeting 12
+    
+* Time: July 28th, 2025 
+* Hour: 12:30pm to 1:30pm and 6:00pm to 10:00pm
+* Agenda: Finishing up development, started working validation, bug fixes
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Development | 95% |
+    | Yuval Glozman | Development | 95% | 
+    | Zana Osman | Development | 95%% | 
+
+### 4.13 Meeting 13
+    
+* Time: July 30th, 2025 
+* Hour: 2:00 pm to 6:00 pm and 8:00pm to 11:00pm
+* Agenda: Start putting documentation together, and working on presentation
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Use Case + Finite State, Path Testing | 100% |
+    | Yuval Glozman | Boundary Value + Equivalence Class Testing, Data Flow Testing | 100% | 
+    | Zana Osman | Decision Tables, Gantt Chart, Diagram of Component Flow | 100% | 
+
+### 4.14 Meeting 14
+    
+* Time: July 31st, 2025 
+* Hour: 10:30am to 3:00pm
+* Agenda: Look over Testing and Report.md, final scan of project requirements, and video presentation
+*   | Team Member | Previous Task | Completion State |
+    |----------|----------|----------|
+    | Aaron Borja | Documents | 100% |
+    | Yuval Glozman | Presentation and Video Recording | 100% | 
+    | Zana Osman | Report.md/Testing.md Formatting | 100% | 
+
+## 5) Project Management
 
 ![Gantt Chart](Images/Gantt.png)
 
@@ -227,9 +325,10 @@ Our solution was broken into 4 primary files, bankUser.java, bankAccont.java, ba
 
 Upon completing this project, we successfully implemented, designed and tested a CLI based banking management application that focused on practicing and enhancing our knowledge about the wide range of software testing methodologies and strategies we learned throughout this semester. By integrating our third solution as the final design, our team would work with a project that seamlessly achieves our objectives of having a local storage, a simple and user-friendly interface, and an application that would be easily testable. The system supports the basic, but essential banking operations such as account creation, being able to deposit and withdraw, checking account balances, and allowing users to transfer their funds to different accounts. 
 
-When it comes to testing, our team applied numerous testing strategies and methodologies. Path testing was used on the withdraw function to ensure we covered full logical flow while data flow testing was used to verify that the variables used in our functions were consistent. Integration testing was also implemented to test the flow between the important components in our program. Additionally, use-case testing tables and state diagrams were created to test user workflows and real-world interactions. Lastly, strategies Boundary Value Testing, Equivalence Class Testing, and Decision Tables were implemented to evaluate inputs and their different conditions. By using these strategies, this allowed us to obtain reasonable code coverage within the different modules. 
+When it comes to testing, our team applied numerous testing strategies and methodologies. Path testing was used on the withdraw function to ensure we covered full logical flow while data flow testing was used to verify that the variables used in our addAccount function were consistent. Integration testing was also implemented to test the flow between the important components in our program. Additionally, use-case testing tables and state diagrams were created to test user workflows and real-world interactions. Lastly, strategies Boundary Value Testing, Equivalence Class Testing, and Decision Tables were implemented to evaluate inputs and their different conditions. By using these strategies, this allowed us to obtain reasonable code coverage within the different modules. 
 
-Although we had many successes developing this project, we are also aware of the different limitations this project presents itself with. A big future design improvement that we could work on is scrapping the CLI and transitioning over to a proper front-end interface using frontend languages and tools. This would make the project stand out more and be more approachable for users. Testing was the main priority in this project, so aspects that we thought were advanced for the scope of this project such as user signup functionality, password hashing, and more complex banking features were omitted from the final design. By refining our system and using these design improvements, we believe this project has potential to become a powerful finance management tool.
+Although we had many successes developing this project, we are also aware of the different limitations this project presents itself with. A big future design improvement that we could work on is scrapping the CLI and transitioning over to a proper front-end interface using frontend languages and tools. This would make the project stand out more and be more approachable for users. Moving over to a server/cloud based database system to allow users to access their banking information from any device as opposed to our current local file system based database. Finally also adding more features/functions and accounts for users to utilize in their application as well as better security and sign up option for users. Testing was the main priority in this project, so aspects that we thought were advanced for the scope of this project such as user signup functionality, password hashing, and more complex banking features were omitted from the final design. By refining our system and using these design improvements, we believe this project has potential to become a powerful finance management tool.
 
-## 7) 
+## 7) References
 
+No references were used for this project.

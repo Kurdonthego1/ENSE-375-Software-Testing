@@ -1,7 +1,7 @@
 ![BGO Financial](Images/raw.png)
 
 ## Project Overview
-* BGO Financial's goal is to improve lifestyles by bringing the most raw and easy to run application to track your account balances
+* BGO Financial's goal is to improve its users
 
 
 ## Contributors

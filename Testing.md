@@ -1,6 +1,6 @@
 This provides a brief overview of the testing methods and strategies we used to validate the functionality of our project. Techniques such as Path Testing, Data Flow Testing, Boundary Value Analysis, Equivalence Class Testing, Decision-Based Testing, State Transition Testing, and Integration Testing
 
-##### Testing Techniques:
+### Testing Techniques:
 - Path Testing
 - Data Flow Testing
 - Boundary Value Analysis
@@ -34,7 +34,7 @@ The functions that we did use these testing methods are,
 
 The detailed documentation as to how the test cases were formed for each of these functions is documented in the file below
 
-[BVA & EQV](Documents/Documents/BoundaryValueTesting&EquivalanceClassTesting.pdf)
+[BVA & EQV](Documents/BoundaryValueTesting&EquivalanceClassTesting.pdf)
 
 ### Use Case Testing
 * ![Case 1](Images/UseCase1.png)

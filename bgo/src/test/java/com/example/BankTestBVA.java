@@ -12,6 +12,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_MinMinusFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertFalse(bank.depositToAcc("testLogin", "chequing", 0));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -21,6 +22,7 @@ public class BankTestBVA {
      @Test
     void TestDeposit_Min(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 1));
         assertEquals(1, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -30,6 +32,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_MinPlus(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 2));
         assertEquals(2, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -39,6 +42,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_Nom(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 5000));
         assertEquals(5000, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -48,6 +52,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_MaxMinus(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 9999));
         assertEquals(9999, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -57,6 +62,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_Max(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 10000));
         assertEquals(10000, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -66,6 +72,7 @@ public class BankTestBVA {
     @Test
     void TestDeposit_MaxPlusFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         assertFalse(bank.depositToAcc("testLogin", "chequing", 10001));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -80,6 +87,7 @@ public class BankTestBVA {
   @Test
   void TestWithdraw_MinMinusFail(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("testLogin", "chequing", 0));
@@ -90,6 +98,7 @@ public class BankTestBVA {
    @Test
     void TestWithdraw_Min(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 1));
@@ -100,6 +109,7 @@ public class BankTestBVA {
   @Test
     void TestWithdraw_MinPlus(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 2));
@@ -110,6 +120,7 @@ public class BankTestBVA {
   @Test
     void TestWithdraw_Nom(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 2500));
@@ -120,6 +131,7 @@ public class BankTestBVA {
   @Test
     void TestWithdraw_MaxMinus(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 4999));
@@ -130,6 +142,7 @@ public class BankTestBVA {
   @Test
     void TestWithdraw_Max(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 5000));
@@ -140,6 +153,7 @@ public class BankTestBVA {
   @Test
     void TestWithdraw_MaxPlusFail(){
     Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin","chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("testLogin", "chequing", 5001));
@@ -154,6 +168,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_MinMinusFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -167,6 +183,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_Min(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -180,6 +198,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_MinPlus(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -193,6 +213,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_Nom(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -206,6 +228,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_MaxMinus(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -219,6 +243,10 @@ public class BankTestBVA {
   @Test
   void TestTransfer_Max(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");
@@ -232,6 +260,8 @@ public class BankTestBVA {
   @Test
   void TestTransfer_MaxPlusFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin","chequing");
     bank.depositToAcc("testLogin", "chequing", 10000);
     bank.addAccount("testLogin","savings");

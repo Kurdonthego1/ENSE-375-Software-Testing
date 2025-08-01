@@ -9,6 +9,7 @@ public class BankTestEQV {
     @Test
     void TestDeposit_Successful(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         assertTrue(bank.depositToAcc("testLogin", "chequing", 5000));
         assertEquals(5000, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -18,6 +19,7 @@ public class BankTestEQV {
     @Test
     void TestDeposit_InvalidUserNameFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         assertFalse(bank.depositToAcc("guest", "chequing", 5000));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -27,6 +29,7 @@ public class BankTestEQV {
     @Test
     void TestDeposit_InvalidAccountNameFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         assertFalse(bank.depositToAcc("testLogin", "investment", 5000));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -36,6 +39,7 @@ public class BankTestEQV {
     @Test
     void TestDeposit_NegativeAmountFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         assertFalse(bank.depositToAcc("testLogin", "chequing", -20));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -45,6 +49,7 @@ public class BankTestEQV {
     @Test
     void TestDeposit_TooMuchAmountFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         assertFalse(bank.depositToAcc("testLogin", "chequing", 12000));
         assertEquals(0, bank.getAccount("testLogin", "chequing").getAccountBalance());
@@ -69,6 +74,7 @@ public class BankTestEQV {
     @Test
     void TestWithdraw_Success(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertTrue(bank.withdrawFromAcc("testLogin", "chequing", 3000));
@@ -79,6 +85,7 @@ public class BankTestEQV {
     @Test
     void TestWithdraw_InvalidUsernameFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("guest", "chequing", 3000));
@@ -89,6 +96,7 @@ public class BankTestEQV {
     @Test
     void TestWithdraw_InvalidAccountTypeFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("guest", "investment", 3000));
@@ -99,6 +107,7 @@ public class BankTestEQV {
     @Test
     void TestWithdraw_NegativeAmountFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("guest", "chequing", -20));
@@ -109,6 +118,7 @@ public class BankTestEQV {
     @Test
     void TestWithdraw_TooMuchAmountFail(){
         Bank bank = new Bank();
+        bank.deleteAccount("testLogin", "chequing");
         bank.addAccount("testLogin", "chequing");
         bank.depositToAcc("testLogin", "chequing", 10000);
         assertFalse(bank.withdrawFromAcc("guest", "chequing", 7000));
@@ -135,6 +145,8 @@ public class BankTestEQV {
 @Test
 void TestTransfer_Success(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -148,6 +160,8 @@ void TestTransfer_Success(){
 @Test
 void TestTransfer_InvalidUsernameFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -161,6 +175,8 @@ void TestTransfer_InvalidUsernameFail(){
 @Test
 void TestTransfer_InvalidFromAccountTypeFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -174,6 +190,8 @@ void TestTransfer_InvalidFromAccountTypeFail(){
 @Test
 void TestTransfer_InvalidtoAccountTypeFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -187,6 +205,8 @@ void TestTransfer_InvalidtoAccountTypeFail(){
 @Test
 void TestTransfer_SameAccountFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -200,6 +220,8 @@ void TestTransfer_SameAccountFail(){
 @Test
 void TestTransfer_NegativeAmountFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);
@@ -213,6 +235,8 @@ void TestTransfer_NegativeAmountFail(){
 @Test
 void TestTransfer_TooMuchAmountFail(){
     Bank bank = new Bank();
+    bank.deleteAccount("testLogin", "chequing");
+    bank.deleteAccount("testLogin", "savings");
     bank.addAccount("testLogin", "chequing");
     bank.addAccount("testLogin", "savings");
     bank.depositToAcc("testLogin", "savings", 10000);

@@ -92,6 +92,9 @@ For our final solution, we ended up leaning towards Solution 2 as an inspiration
 #### Application Components
 ![Image](Images/ComponentTesting.png)
 
+#### Presentation
+![Presntation](Documents/BGO%20Financial%20Presentation.pdf)
+
 
 ### 3.3.1 Components
 
